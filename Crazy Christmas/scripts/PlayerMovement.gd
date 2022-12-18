@@ -1,36 +1,63 @@
 extends KinematicBody
 
+###CONSTS
+const snowballScenePath = "res://scenes/Snowball.tscn"
+const RAY_LENGTH = 20
+const snowballThrowStrengthMin = Vector3(5, 12, 5)
+const snowballThrowStrengthMax = Vector3(25, 7, 25)
+const movementSpeedMax = 10.0
+const movementSpeedIncreaseFactor = 30.0
+const snowballTime = 1
+const snowballChargeTime = 0.25
+
 ###REFS
 onready var MAIN = get_node("/root/Main")
 onready var GLOBALS = get_node("/root/Main/Globals")
 onready var camera = get_node("../Camera")
 
 ###MEM VARS
-const RAY_LENGTH = 100
 enum PLAYER_STATES {
 	IDLE=0,
-	RUN=1
+	RUN=1,
+	SNOWBALL_CHARGE=2,
+	SNOWBALL_THROW=3
 }
 onready var currPlayerState = PLAYER_STATES.IDLE
 onready var prevPlayerState = PLAYER_STATES.IDLE
 onready var input = Vector3()
-var gravity
-onready var movementSpeedMax = 10.0
-onready var movementSpeedIncreaseFactor = 30.0
-onready var currMovementSpeed = 0.0
 onready var velocity = Vector3()
-onready var inputReceived = false
 onready var toRay = Vector3()
+var gravity
+onready var currMovementSpeed = 0.0
+onready var inputReceived = false
+onready var snowballReady = true
+onready var snowballThrowStrength = snowballThrowStrengthMin
+onready var snowballChargeFactor = 0.0
+
+###TIMERS
+onready var snowballTimer = 0
+onready var snowballChargeTimer = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	gravity = GLOBALS.GRAVITY
 
+func _process(delta):
+	match(currPlayerState):
+		PLAYER_STATES.SNOWBALL_CHARGE:
+			snowballChargeTimer += delta
+			if(snowballChargeTimer >= snowballChargeTime):
+				chargeSnowball(delta)
+				snowballChargeTimer = 0
+	if(!snowballReady):
+		snowballTimer += delta
+		if(snowballTimer >= snowballTime):
+			snowballReady = true
+			snowballTimer = 0
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	#gravity
 	velocity.y -= gravity * delta
-	#wipe movement direction
 	velocity.x = 0
 	velocity.z = 0
 	handleInput(Input)
@@ -41,24 +68,39 @@ func _physics_process(delta):
 			currMovementSpeed += movementSpeedIncreaseFactor * delta
 		velocity.x = input.x * currMovementSpeed
 		velocity.z = input.z * currMovementSpeed
+		setPlayerState(PLAYER_STATES.RUN)
 	velocity = move_and_slide(velocity, Vector3(0, 1, 0),
 									true, 4, PI/4, false)
-	look_at(Vector3(toRay.x, 0, toRay.z), Vector3(0,1,0))
+	look_at(toRay, Vector3(0,1,0))
+	rotation.x = 0
+	rotation.z = 0
 
 func _input(event):
 	if event is InputEventMouseMotion:
 		var fromRay = camera.project_ray_origin(event.position)
 		toRay = fromRay + camera.project_ray_normal(event.position) * RAY_LENGTH
-	if event is InputEventMouseButton:
-		spawnSnowball(event.position)
+	if event is InputEventMouseButton && snowballReady:
+		setPlayerState(PLAYER_STATES.SNOWBALL_CHARGE)
 
-func spawnSnowball(argTargetPos):
-	var snowballScenePath = "res://scenes/Snowball.tscn"
+func chargeSnowball(delta):
+	snowballChargeFactor += delta * 10
+	if(snowballChargeFactor < 1.0):
+		snowballThrowStrength = snowballThrowStrengthMin + (snowballThrowStrengthMax - snowballThrowStrengthMin) * snowballChargeFactor
+	print("Snowball Strength: ", snowballThrowStrength)
+
+func throwSnowball():
 	var snowball = load(snowballScenePath).instance()
 	MAIN.add_child(snowball)
 	snowball.set_owner(MAIN)
 	snowball.transform.origin = transform.origin
-	snowball.apply_central_impulse(Vector3(toRay.x, 10, toRay.z))
+	var targetPos = Vector3()
+	targetPos.x = snowballThrowStrength.x * sin(rotation.y) * -1
+	targetPos.y = snowballThrowStrength.y
+	targetPos.z = snowballThrowStrength.z * cos(rotation.y) * -1
+	snowball.apply_impulse(Vector3.ZERO, targetPos)
+	snowballReady = false
+	snowballThrowStrength = snowballThrowStrengthMin
+	snowballChargeFactor = 0
 
 func handleInput(argInput):
 	inputReceived = false
@@ -78,14 +120,23 @@ func handleInput(argInput):
 		inputReceived = true
 		input.z += 1
 		setPlayerState(PLAYER_STATES.RUN)
+	if(argInput.is_action_pressed("ThrowSnowball")):
+		setPlayerState(PLAYER_STATES.SNOWBALL_CHARGE)
+	if(argInput.is_action_just_released("ThrowSnowball")):
+		setPlayerState(PLAYER_STATES.SNOWBALL_THROW)
 
 func setPlayerState(argNewState):
 	if(currPlayerState != null):
 		prevPlayerState = currPlayerState
 	if(argNewState != null):
 		currPlayerState = argNewState
-	#match currPlayerState:
-		#PLAYER_STATES.IDLE:
-			#currMovementSpeed = 0.0
-		#PLAYER_STATES.RUN:
-			
+	match currPlayerState:
+		PLAYER_STATES.IDLE:
+			currMovementSpeed = 0.0
+		PLAYER_STATES.RUN:
+			pass
+		PLAYER_STATES.SNOWBALL_CHARGE:
+			#charging in process func
+			pass
+		PLAYER_STATES.SNOWBALL_THROW:
+			throwSnowball()

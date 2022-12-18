@@ -14,4 +14,4 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	transform.origin.x = get_node("../Player").transform.origin.x
-	transform.origin.z = get_node("../Player").transform.origin.z
+	transform.origin.z = get_node("../Player").transform.origin.z + 8

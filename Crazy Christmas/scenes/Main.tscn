@@ -24,14 +24,14 @@ script = ExtResource( 4 )
 [node name="SignalBus" type="Node" parent="."]
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 2.98023e-08, 1, 0, -1, 2.98023e-08, 0, 24, 0.0124149 )
+transform = Transform( 1, 0, 0, 0, 0.477251, 0.878767, 0, -0.878767, 0.477251, 0, 19.2903, 8.11315 )
 current = true
 script = ExtResource( 5 )
 
 [node name="Floor" type="Spatial" parent="."]
 
 [node name="MeshInstance" type="MeshInstance" parent="Floor"]
-transform = Transform( 50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 1, 0 )
+transform = Transform( 50, 0, 0, 0, 1, 0, 0, 0, 50, -1.25372, 1.11605, 0.0361919 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 2 )
@@ -135,4 +135,4 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 2, 8 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, -8 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.97406, 0 )
