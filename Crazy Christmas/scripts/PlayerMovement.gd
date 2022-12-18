@@ -1,5 +1,11 @@
 extends KinematicBody
 
+###REFS
+onready var MAIN = get_node("/root/Main")
+onready var GLOBALS = get_node("/root/Main/Globals")
+onready var SIGNAL_BUS = get_node("/root/Main/SignalBus")
+onready var camera = get_node("../Camera")
+
 ###CONSTS
 const snowballScenePath = "res://scenes/Snowball.tscn"
 const RAY_LENGTH = 20
@@ -9,11 +15,6 @@ const movementSpeedMax = 10.0
 const movementSpeedIncreaseFactor = 30.0
 const snowballTime = 1
 const snowballChargeTime = 0.25
-
-###REFS
-onready var MAIN = get_node("/root/Main")
-onready var GLOBALS = get_node("/root/Main/Globals")
-onready var camera = get_node("../Camera")
 
 ###MEM VARS
 enum PLAYER_STATES {
@@ -86,7 +87,7 @@ func chargeSnowball(delta):
 	snowballChargeFactor += delta * 10
 	if(snowballChargeFactor < 1.0):
 		snowballThrowStrength = snowballThrowStrengthMin + (snowballThrowStrengthMax - snowballThrowStrengthMin) * snowballChargeFactor
-	print("Snowball Strength: ", snowballThrowStrength)
+	SIGNAL_BUS.emit_signal("playerChargingSnowball", snowballChargeFactor)
 
 func throwSnowball():
 	var snowball = load(snowballScenePath).instance()
@@ -101,6 +102,7 @@ func throwSnowball():
 	snowballReady = false
 	snowballThrowStrength = snowballThrowStrengthMin
 	snowballChargeFactor = 0
+	SIGNAL_BUS.emit_signal("playerChargingSnowball", snowballChargeFactor)
 
 func handleInput(argInput):
 	inputReceived = false
