@@ -42,6 +42,8 @@ skeleton = NodePath("../..")
 material/0 = SubResource( 2 )
 
 [node name="StaticBody" type="StaticBody" parent="Floor"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape" type="CollisionShape" parent="Floor/StaticBody"]
 transform = Transform( 50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 1, 0 )
