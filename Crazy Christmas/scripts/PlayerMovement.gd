@@ -80,7 +80,9 @@ func _input(event):
 	if event is InputEventMouseMotion:
 		var fromRay = camera.project_ray_origin(event.position)
 		toRay = fromRay + camera.project_ray_normal(event.position) * RAY_LENGTH
-	if event is InputEventMouseButton && snowballReady:
+	if event is InputEventMouseButton && event.button_index == 0 && snowballReady:
+		var fromRay = camera.project_ray_origin(event.position)
+		toRay = fromRay + camera.project_ray_normal(event.position) * RAY_LENGTH
 		setPlayerState(PLAYER_STATES.SNOWBALL_CHARGE)
 
 func chargeSnowball(delta):

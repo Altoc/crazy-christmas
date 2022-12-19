@@ -1,11 +1,14 @@
 extends Spatial
 
+onready var GLOBALS = get_node("Globals")
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	GLOBALS.RNG.randomize()
 
+func _process(delta):
+	if(Input.is_action_pressed("ui_cancel")):
+		togglePauseGame()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func togglePauseGame():
+	GLOBALS.PAUSED = !GLOBALS.PAUSED
+	get_tree().paused = GLOBALS.PAUSED
