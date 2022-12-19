@@ -72,7 +72,6 @@ func _physics_process(delta):
 		setPlayerState(PLAYER_STATES.RUN)
 	velocity = move_and_slide(velocity, Vector3(0, 1, 0),
 									true, 4, PI/4, false)
-	look_at(toRay, Vector3(0,1,0))
 	rotation.x = 0
 	rotation.z = 0
 
@@ -80,9 +79,11 @@ func _input(event):
 	if event is InputEventMouseMotion:
 		var fromRay = camera.project_ray_origin(event.position)
 		toRay = fromRay + camera.project_ray_normal(event.position) * RAY_LENGTH
+		look_at(toRay, Vector3(0,1,0))
 	if event is InputEventMouseButton && event.button_index == 0 && snowballReady:
 		var fromRay = camera.project_ray_origin(event.position)
 		toRay = fromRay + camera.project_ray_normal(event.position) * RAY_LENGTH
+		look_at(toRay, Vector3(0,1,0))
 		setPlayerState(PLAYER_STATES.SNOWBALL_CHARGE)
 
 func chargeSnowball(delta):
