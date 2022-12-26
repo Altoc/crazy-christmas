@@ -14,7 +14,7 @@ const snowballThrowStrengthMax = Vector3(25, 3, 25)
 const movementSpeedMax = 10.0
 const movementSpeedIncreaseFactor = 30.0
 const snowballTime = 1
-const snowballChargeTime = 0.25
+const snowballChargeTime = 0.01
 
 ###MEM VARS
 enum PLAYER_STATES {
@@ -89,7 +89,7 @@ func _input(event):
 		setPlayerState(PLAYER_STATES.SNOWBALL_CHARGE)
 
 func chargeSnowball(delta):
-	snowballChargeFactor += delta * 10
+	snowballChargeFactor += delta * 1
 	if(snowballChargeFactor < 1.0):
 		snowballThrowStrength = snowballThrowStrengthMin + (snowballThrowStrengthMax - snowballThrowStrengthMin) * snowballChargeFactor
 	SIGNAL_BUS.emit_signal("playerChargingSnowball", snowballChargeFactor)
