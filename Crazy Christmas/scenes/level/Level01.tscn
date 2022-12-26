@@ -1,18 +1,31 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/Wall.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/TeleportOut.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/models/Ramp.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/Button.tscn" type="PackedScene" id=4]
+[ext_resource path="res://SnowMaterial.tres" type="Material" id=5]
 
 [sub_resource type="CubeMesh" id=1]
 
-[sub_resource type="SpatialMaterial" id=2]
-vertex_color_use_as_albedo = true
-albedo_color = Color( 0.301961, 0.301961, 0.301961, 1 )
-
 [sub_resource type="ConvexPolygonShape" id=3]
 points = PoolVector3Array( -1, -1, -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, -1, 1, 1, 1, -1, -1, -1, -1, 1, -1, 1, -1 )
+
+[sub_resource type="ProceduralSky" id=6]
+sky_top_color = Color( 0.647059, 0.796078, 0.878431, 1 )
+sky_horizon_color = Color( 0.94902, 0.682353, 0.223529, 1 )
+sky_curve = 0.0365513
+sky_energy = 0.5
+ground_bottom_color = Color( 0.737255, 0.737255, 0.737255, 1 )
+ground_horizon_color = Color( 0.831373, 0.639216, 0.262745, 1 )
+ground_curve = 0.125534
+ground_energy = 0.5
+sun_color = Color( 0.94902, 0.682353, 0.223529, 1 )
+sun_latitude = 5.0
+
+[sub_resource type="Environment" id=7]
+background_mode = 2
+background_sky = SubResource( 6 )
 
 [node name="Level01" type="Spatial"]
 
@@ -22,7 +35,7 @@ points = PoolVector3Array( -1, -1, -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, -1, 1, 1, 1,
 transform = Transform( 50, 0, 0, 0, 1, 0, 0, 0, 50, -1.25372, 1.11605, 0.0361919 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../../../..")
-material/0 = SubResource( 2 )
+material/0 = ExtResource( 5 )
 
 [node name="StaticBody" type="StaticBody" parent="Floor"]
 collision_layer = 3
@@ -209,3 +222,6 @@ signalChannel = 1
 
 [node name="TeleportOut" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 10, -12 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 7 )

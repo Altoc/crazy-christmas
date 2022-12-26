@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=16 format=2]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "snowman_01_Sphere"
@@ -13,6 +13,9 @@ surfaces/0 = {
 "skeleton_aabb": [  ],
 "vertex_count": 1984
 }
+
+[sub_resource type="SpatialMaterial" id=11]
+vertex_color_use_as_albedo = true
 
 [sub_resource type="ArrayMesh" id=2]
 resource_name = "snowman_01_Sphere001"
@@ -41,6 +44,10 @@ surfaces/0 = {
 "skeleton_aabb": [  ],
 "vertex_count": 1984
 }
+
+[sub_resource type="SpatialMaterial" id=12]
+vertex_color_use_as_albedo = true
+albedo_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="ArrayMesh" id=4]
 resource_name = "snowman_01_Sphere003"
@@ -84,6 +91,10 @@ surfaces/0 = {
 "vertex_count": 384
 }
 
+[sub_resource type="SpatialMaterial" id=13]
+vertex_color_use_as_albedo = true
+albedo_color = Color( 1, 0.560784, 0, 1 )
+
 [sub_resource type="ArrayMesh" id=7]
 resource_name = "snowman_01_Cylinder"
 surfaces/0 = {
@@ -97,6 +108,10 @@ surfaces/0 = {
 "skeleton_aabb": [  ],
 "vertex_count": 448
 }
+
+[sub_resource type="SpatialMaterial" id=14]
+vertex_color_use_as_albedo = true
+albedo_color = Color( 0.207843, 0.145098, 0.0509804, 1 )
 
 [sub_resource type="ArrayMesh" id=8]
 resource_name = "snowman_01_Cylinder001"
@@ -126,6 +141,10 @@ surfaces/0 = {
 "vertex_count": 2054
 }
 
+[sub_resource type="SpatialMaterial" id=15]
+vertex_color_use_as_albedo = true
+albedo_color = Color( 1, 0, 0, 1 )
+
 [sub_resource type="ArrayMesh" id=10]
 resource_name = "snowman_01_Sphere006"
 surfaces/0 = {
@@ -146,49 +165,49 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0
 [node name="Sphere" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01028, 0.00477785 )
 mesh = SubResource( 1 )
-material/0 = null
+material/0 = SubResource( 11 )
 
 [node name="Sphere001" type="MeshInstance" parent="."]
 transform = Transform( 0.759777, 0, 0, 0, 0.759777, 0, 0, 0, 0.759777, 0, 2.66132, -0.00178513 )
 mesh = SubResource( 2 )
-material/0 = null
+material/0 = SubResource( 11 )
 
 [node name="Sphere002" type="MeshInstance" parent="."]
 transform = Transform( 0.067024, 0, 0, 0, 0.067024, 0, 0, 0, 0.067024, 0.721928, 1.7195, 0 )
 mesh = SubResource( 3 )
-material/0 = null
+material/0 = SubResource( 12 )
 
 [node name="Sphere003" type="MeshInstance" parent="."]
 transform = Transform( 0.067024, 0, 0, 0, 0.067024, 0, 0, 0, 0.067024, 0.964758, 1.20759, 0 )
 mesh = SubResource( 4 )
-material/0 = null
+material/0 = SubResource( 12 )
 
 [node name="Sphere004" type="MeshInstance" parent="."]
 transform = Transform( 0.067024, 0, 0, 0, 0.067024, 0, 0, 0, 0.067024, 0.945069, 0.689113, 0 )
 mesh = SubResource( 5 )
-material/0 = null
+material/0 = SubResource( 12 )
 
 [node name="Cone" type="MeshInstance" parent="."]
 transform = Transform( 0.00136009, 1.12174, 0, -1.12174, 0.00136009, 0, 0, 0, 1.12174, 0.464176, 2.78744, 0 )
 mesh = SubResource( 6 )
-material/0 = null
+material/0 = SubResource( 13 )
 
 [node name="Cylinder" type="MeshInstance" parent="."]
 transform = Transform( 0.0588031, 0, 0, 0, 0.0303533, 0.0503635, 0, -0.0503635, 0.0303533, 0, 1.70565, -0.745081 )
 mesh = SubResource( 7 )
-material/0 = null
+material/0 = SubResource( 14 )
 
 [node name="Cylinder001" type="MeshInstance" parent="."]
 transform = Transform( 0.0588031, 0, 0, 0, 0.0303533, 0.0503635, 0, -0.0503635, 0.0303533, 0, 1.57986, 2.12622 )
 mesh = SubResource( 8 )
-material/0 = null
+material/0 = SubResource( 14 )
 
 [node name="Sphere005" type="MeshInstance" parent="."]
 transform = Transform( 0.237605, 0, 0, 0, 0.237232, 0.0133037, 0, -0.0133037, 0.237232, -0.0746482, 3.86931, -1.91292 )
 mesh = SubResource( 9 )
-material/0 = null
+material/0 = SubResource( 15 )
 
 [node name="Sphere006" type="MeshInstance" parent="."]
 transform = Transform( -0.22662, 0.0710775, 0.00688058, 0.000470869, -0.0214062, 0.236638, 0.0714082, 0.225712, 0.0202757, 0.578944, 0.908644, 2.82785 )
 mesh = SubResource( 10 )
-material/0 = null
+material/0 = SubResource( 15 )

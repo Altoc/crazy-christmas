@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/level/Level01.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
@@ -8,6 +8,21 @@
 [ext_resource path="res://scenes/UI.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scripts/SignalBus.gd" type="Script" id=7]
 [ext_resource path="res://scripts/Game.gd" type="Script" id=9]
+
+[sub_resource type="ParticlesMaterial" id=9]
+emission_shape = 2
+emission_box_extents = Vector3( 50, 50, 50 )
+flag_rotate_y = true
+gravity = Vector3( 0, -1, 0 )
+angle = 45.0
+angle_random = 1.0
+
+[sub_resource type="SpatialMaterial" id=8]
+vertex_color_use_as_albedo = true
+
+[sub_resource type="CubeMesh" id=10]
+material = SubResource( 8 )
+size = Vector3( 0.1, 0.1, 0.1 )
 
 [node name="Main" type="Spatial"]
 pause_mode = 2
@@ -35,3 +50,11 @@ transform = Transform( 1, 0, 0, 0, 0.477251, 0.878767, 0, -0.878767, 0.477251, -
 
 [node name="Player" parent="Game" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 2.97406, 5 )
+
+[node name="SnowParticles" type="Particles" parent="Game"]
+amount = 1000
+lifetime = 30.0
+preprocess = 5.0
+visibility_aabb = AABB( -9, -8, -8, 18, 16, 16 )
+process_material = SubResource( 9 )
+draw_pass_1 = SubResource( 10 )

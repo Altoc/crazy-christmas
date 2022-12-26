@@ -36,7 +36,7 @@ func setState(argNewState):
 			STATES.UNPRESSED:
 				pass
 			STATES.PRESSED:
-				meshInstance.get_surface_material(0).albedo_color = GLOBALS.COLOR_GREEN
+				meshInstance.get_surface_material(0).albedo_color = GLOBALS.COLOR_GREY
 				SIGNAL_BUS.emit_signal("obstacleAction", 1, signalChannel)
 				pass
 
