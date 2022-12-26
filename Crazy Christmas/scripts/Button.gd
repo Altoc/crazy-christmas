@@ -13,15 +13,18 @@ enum STATES {
 
 ##REFS
 onready var animPlayer = get_node("AnimationPlayer")
-onready var currState = STATES.UNPRESSED
+onready var meshInstance = get_node("MeshInstance")
 
 ##MEMVARS
+onready var currState = STATES.UNPRESSED
 export var signalChannel = -1
 
 ##FUNCS
 
 func _ready():
-	get_node("MeshInstance").get_surface_material(0).albedo_color = GLOBALS.COLOR_RED
+	#make mesh unique so changing color doenst effect other buttons
+	meshInstance.set_surface_material(0, meshInstance.get_active_material(0).duplicate(true))
+	meshInstance.get_surface_material(0).albedo_color = GLOBALS.COLOR_RED
 
 func press():
 	setState(STATES.PRESSED)
@@ -33,7 +36,7 @@ func setState(argNewState):
 			STATES.UNPRESSED:
 				pass
 			STATES.PRESSED:
-				get_node("MeshInstance").get_surface_material(0).albedo_color = GLOBALS.COLOR_GREEN
+				meshInstance.get_surface_material(0).albedo_color = GLOBALS.COLOR_GREEN
 				SIGNAL_BUS.emit_signal("obstacleAction", 1, signalChannel)
 				pass
 
