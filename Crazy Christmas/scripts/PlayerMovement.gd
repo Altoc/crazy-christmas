@@ -9,8 +9,8 @@ onready var camera = get_node("../Camera/Camera")
 ###CONSTS
 const snowballScenePath = "res://scenes/Snowball.tscn"
 const RAY_LENGTH = 20
-const snowballThrowStrengthMin = Vector3(5, 12, 5)
-const snowballThrowStrengthMax = Vector3(25, 7, 25)
+const snowballThrowStrengthMin = Vector3(5, 8, 5)
+const snowballThrowStrengthMax = Vector3(25, 3, 25)
 const movementSpeedMax = 10.0
 const movementSpeedIncreaseFactor = 30.0
 const snowballTime = 1
@@ -98,7 +98,10 @@ func throwSnowball():
 	var snowball = load(snowballScenePath).instance()
 	MAIN.add_child(snowball)
 	snowball.set_owner(MAIN)
-	snowball.transform.origin = transform.origin
+	var spawnPos = Vector3()
+	spawnPos = transform.origin
+	spawnPos.y += 2
+	snowball.transform.origin = spawnPos
 	var targetPos = Vector3()
 	targetPos.x = snowballThrowStrength.x * sin(rotation.y) * -1
 	targetPos.y = snowballThrowStrength.y
