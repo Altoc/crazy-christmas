@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/Wall.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/TeleportOut.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/models/Ramp.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Button.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -30,6 +31,11 @@ collision_mask = 3
 [node name="CollisionShape" type="CollisionShape" parent="Floor/StaticBody"]
 transform = Transform( 50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 1, 0 )
 shape = SubResource( 3 )
+
+[node name="Buttons" type="Spatial" parent="."]
+
+[node name="Button" parent="Buttons" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 4, -10 )
 
 [node name="Walls" type="Spatial" parent="."]
 

@@ -4,7 +4,7 @@ extends KinematicBody
 onready var MAIN = get_node("/root/Main")
 onready var GLOBALS = get_node("/root/Main/Globals")
 onready var SIGNAL_BUS = get_node("/root/Main/SignalBus")
-onready var camera = get_node("../Camera")
+onready var camera = get_node("../Camera/Camera")
 
 ###CONSTS
 const snowballScenePath = "res://scenes/Snowball.tscn"
