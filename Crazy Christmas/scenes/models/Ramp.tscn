@@ -23,21 +23,30 @@ points = PoolVector3Array( -0.999101, -0.9991, -1, 1.01676, -0.984045, 1.01588, 
 
 [sub_resource type="Animation" id=3]
 resource_name = "ACTION_RISE"
-length = 2.0
-tracks/0/type = "transform"
-tracks/0/path = NodePath("Cube")
+tracks/0/type = "value"
+tracks/0/path = NodePath("Cube:translation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/keys = PoolRealArray( 0, 1, 0, -6, 0, 0, 0, 0, 1, 2, 2, 2, 2, 1, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2 )
-tracks/1/type = "transform"
-tracks/1/path = NodePath("StaticBody")
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 4, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("StaticBody:translation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/keys = PoolRealArray( 0, 1, 0, -6, 0, 0, 0, 0, 1, 1, 1, 1, 2, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1 )
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 4, 0 ) ]
+}
 
 [node name="Ramp" type="Spatial"]
 script = ExtResource( 2 )

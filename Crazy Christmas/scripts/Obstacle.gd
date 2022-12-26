@@ -27,7 +27,7 @@ export var signalChannel = -1
 ##FUNCS
 
 func _ready():
-	SIGNAL_BUS.connect("obstacleAction", self, "setState")
+	SIGNAL_BUS.connect("obstacleAction", self, "obstacleActionReceiver")
 
 func obstacleActionReceiver(argActionIdx, argSignalChannel):
 	if(argSignalChannel == signalChannel):
@@ -56,6 +56,3 @@ func setState(argNewState):
 				pass
 			STATES.IDLE_AFTER:
 				pass
-
-func rise():
-	setState(STATES.ACTION_RISE)

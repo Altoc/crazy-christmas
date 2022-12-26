@@ -21,7 +21,7 @@ export var signalChannel = -1
 ##FUNCS
 
 func _ready():
-	press()
+	get_node("MeshInstance").get_surface_material(0).albedo_color = GLOBALS.COLOR_RED
 
 func press():
 	setState(STATES.PRESSED)
@@ -33,6 +33,11 @@ func setState(argNewState):
 			STATES.UNPRESSED:
 				pass
 			STATES.PRESSED:
-				print("Button Pressed")
-				SIGNAL_BUS.emit_signal("obstacleAction", 1, 0)
+				get_node("MeshInstance").get_surface_material(0).albedo_color = GLOBALS.COLOR_GREEN
+				SIGNAL_BUS.emit_signal("obstacleAction", 1, signalChannel)
 				pass
+
+
+func _on_Area_body_entered(body):
+	if(body.is_in_group("snowball")):
+		press()

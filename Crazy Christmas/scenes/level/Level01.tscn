@@ -36,6 +36,7 @@ shape = SubResource( 3 )
 
 [node name="Button" parent="Buttons" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 4, -10 )
+signalChannel = 0
 
 [node name="Walls" type="Spatial" parent="."]
 
@@ -159,7 +160,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, -8 )
 [node name="Ramps" type="Spatial" parent="."]
 
 [node name="Ramp" parent="Ramps" instance=ExtResource( 3 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -28, 4, 4 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -28, 0, 4 )
+signalChannel = 0
 
 [node name="TeleportOut" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 3, -4 )
