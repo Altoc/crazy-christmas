@@ -2,6 +2,11 @@ extends Node
 
 ##SIGNALS
 signal playerChargingSnowball
+signal playerTeleportIn
 signal playerTeleportOut
-signal obstacleAction
+signal playerMoveToSpawn
+signal playerAnimationFinished
 
+signal uiToggleCurtain
+
+signal obstacleAction

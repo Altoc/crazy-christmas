@@ -18,6 +18,7 @@ onready var meshInstance = get_node("MeshInstance")
 ##MEMVARS
 onready var currState = STATES.UNPRESSED
 export var signalChannel = -1
+export var actionIdx = -1
 
 ##FUNCS
 
@@ -37,7 +38,7 @@ func setState(argNewState):
 				pass
 			STATES.PRESSED:
 				meshInstance.get_surface_material(0).albedo_color = GLOBALS.COLOR_GREY
-				SIGNAL_BUS.emit_signal("obstacleAction", 1, signalChannel)
+				SIGNAL_BUS.emit_signal("obstacleAction", actionIdx, signalChannel)
 				pass
 
 

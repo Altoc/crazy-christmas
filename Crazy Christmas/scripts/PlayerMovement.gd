@@ -44,7 +44,10 @@ onready var snowballChargeTimer = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	SIGNAL_BUS.connect("playerTeleportOut", self, "onPlayerTeleportOut")
+	SIGNAL_BUS.connect("playerTeleportIn", self, "onPlayerTeleportIn")
+	SIGNAL_BUS.connect("playerMoveToSpawn", self, "onPlayerMoveToSpawn")
 	gravity = GLOBALS.GRAVITY
+	onPlayerTeleportIn()
 
 func _process(delta):
 	if(currPlayerState != PLAYER_STATES.STOP):
@@ -94,9 +97,19 @@ func _input(event):
 			rotation.z = 0
 			setPlayerState(PLAYER_STATES.SNOWBALL_CHARGE)
 
+func onPlayerMoveToSpawn(argTransformOrigin):
+	transform.origin.x = argTransformOrigin.x
+	transform.origin.z = argTransformOrigin.z
+
 func onPlayerTeleportOut():
 	setPlayerState(PLAYER_STATES.STOP)
 	animPlayer.play("TELEPORT_OUT")
+
+func onPlayerTeleportIn():
+	setPlayerState(PLAYER_STATES.STOP)
+	animPlayer.play("TELEPORT_IN")
+	yield(animPlayer, "animation_finished")
+	setPlayerState(PLAYER_STATES.IDLE)
 
 func chargeSnowball(delta):
 	snowballChargeFactor += delta * 1
@@ -163,3 +176,6 @@ func setPlayerState(argNewState):
 			pass
 		PLAYER_STATES.SNOWBALL_THROW:
 			throwSnowball()
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	SIGNAL_BUS.emit_signal("playerAnimationFinished", anim_name)

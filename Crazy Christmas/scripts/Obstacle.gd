@@ -40,10 +40,9 @@ func setState(argNewState):
 			STATES.IDLE_BEFORE:
 				pass
 			STATES.ACTION_RISE:
-				print(STATES.keys()[STATES.ACTION_RISE])
 				animPlayer.play(STATES.keys()[STATES.ACTION_RISE])
 			STATES.ACTION_FALL:
-				pass
+				animPlayer.play(STATES.keys()[STATES.ACTION_FALL])
 			STATES.ACTION_MOVE_RIGHT:
 				pass
 			STATES.ACTION_MOVE_UP:
