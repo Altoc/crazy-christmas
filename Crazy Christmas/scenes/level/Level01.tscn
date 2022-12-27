@@ -1,37 +1,19 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/Wall.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/TeleportOut.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/obstacles/ObstacleWall.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/Button.tscn" type="PackedScene" id=4]
-[ext_resource path="res://SnowMaterial.tres" type="Material" id=5]
+[ext_resource path="res://scenes/Floor.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/Torch.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scripts/Level.gd" type="Script" id=7]
-
-[sub_resource type="CubeMesh" id=1]
-
-[sub_resource type="ConvexPolygonShape" id=3]
-points = PoolVector3Array( -1, -1, -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, -1, 1, 1, 1, -1, -1, -1, -1, 1, -1, 1, -1 )
+[ext_resource path="res://scenes/obstacles/ObstacleRamp.tscn" type="PackedScene" id=9]
 
 [node name="Level01" type="Spatial"]
 script = ExtResource( 7 )
 nextLevelPath = "res://scenes/level/Level02.tscn"
 
-[node name="Floor" type="Spatial" parent="."]
-
-[node name="MeshInstance" type="MeshInstance" parent="Floor"]
-transform = Transform( 50, 0, 0, 0, 1, 0, 0, 0, 50, -1.25372, 1.11605, 0.0361919 )
-mesh = SubResource( 1 )
-skeleton = NodePath("../../../..")
-material/0 = ExtResource( 5 )
-
-[node name="StaticBody" type="StaticBody" parent="Floor"]
-collision_layer = 3
-collision_mask = 3
-
-[node name="CollisionShape" type="CollisionShape" parent="Floor/StaticBody"]
-transform = Transform( 50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 1, 0 )
-shape = SubResource( 3 )
+[node name="Floor" parent="." instance=ExtResource( 5 )]
 
 [node name="Buttons" type="Spatial" parent="."]
 
@@ -173,6 +155,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 2, -20 )
 [node name="ObstacleWall" parent="Obstacles" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 4, -16 )
 signalChannel = 0
+
+[node name="ObstacleRamp" parent="Obstacles" instance=ExtResource( 9 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.5, 4, 0 )
+
+[node name="ObstacleRamp2" parent="Obstacles" instance=ExtResource( 9 )]
+transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -23.5, 4, -12 )
 
 [node name="Decor" type="Spatial" parent="."]
 

@@ -1,10 +1,52 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/SnowballChargeProgressBar.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://images/backdrop_01.png" type="Texture" id=2]
 [ext_resource path="res://scripts/UI.gd" type="Script" id=3]
 
+[sub_resource type="Animation" id=1]
+resource_name = "FADE_IN"
+length = 2.0
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Curtain:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 1.2, -0.0338712, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2 )
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "FADE_OUT"
+length = 2.0
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Curtain:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -1.4, 0.0784352, 0.25, 0 ),
+"times": PoolRealArray( 0, 2 )
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Curtain:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
 [node name="UI" type="Control"]
+pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 3 )
@@ -67,8 +109,16 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Curtain" type="TextureRect" parent="."]
-visible = false
+modulate = Color( 1, 1, 1, 0 )
 margin_right = 514.0
 margin_bottom = 301.0
 texture = ExtResource( 2 )
 expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/FADE_IN = SubResource( 1 )
+anims/FADE_OUT = SubResource( 2 )
+anims/RESET = SubResource( 3 )

@@ -8,5 +8,6 @@ signal playerMoveToSpawn
 signal playerAnimationFinished
 
 signal uiToggleCurtain
+signal uiCurtainAnimationFinished
 
 signal obstacleAction

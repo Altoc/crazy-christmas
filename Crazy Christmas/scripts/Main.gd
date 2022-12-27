@@ -6,6 +6,7 @@ onready var SIGNAL_BUS = get_node("SignalBus")
 func _ready():
 	GLOBALS.RNG.randomize()
 	SIGNAL_BUS.connect("playerAnimationFinished", self, "onPlayerAnimationFinished")
+	SIGNAL_BUS.connect("uiCurtainAnimationFinished", self, "onUiCurtainAnimationFinished")
 
 func _process(_delta):
 	if(Input.is_action_pressed("ui_cancel")):
@@ -18,9 +19,14 @@ func togglePauseGame():
 func endGame():
 	SIGNAL_BUS.emit_signal("playerTeleportOut")
 
+func onUiCurtainAnimationFinished():
+	#stub
+	pass
+
 func onPlayerAnimationFinished(argAnimation):
 	if(argAnimation == "TELEPORT_OUT"):
 		SIGNAL_BUS.emit_signal("uiToggleCurtain")
+		yield(SIGNAL_BUS, "uiCurtainAnimationFinished")
 		if(GLOBALS.CURRENT_LEVEL.nextLevelPath == "res://scenes/level/LevelCredits.tscn"):
 			loadCredits()
 		else:
@@ -37,6 +43,7 @@ func loadLevel():
 	GLOBALS.CURRENT_LEVEL.set_owner(GLOBALS.CURRENT_LEVEL_PARENT)
 	SIGNAL_BUS.emit_signal("playerMoveToSpawn", GLOBALS.CURRENT_LEVEL.getPlayerSpawnCoords())
 	SIGNAL_BUS.emit_signal("uiToggleCurtain")
+	yield(SIGNAL_BUS, "uiCurtainAnimationFinished")
 	SIGNAL_BUS.emit_signal("playerTeleportIn")
 
 func loadCredits():
