@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://models/Material.material" type="Material" id=1]
 [ext_resource path="res://scripts/Obstacle.gd" type="Script" id=2]
@@ -22,6 +22,29 @@ surfaces/0 = {
 [sub_resource type="ConvexPolygonShape" id=2]
 points = PoolVector3Array( -0.999101, -0.9991, -1, 1.01676, -0.984045, 1.01588, 1.01676, 1.01678, -0.984945, -1.01588, -0.984045, 1.01588, -1.01588, 1.01678, -0.984945, 0.999982, -0.9991, -1 )
 
+[sub_resource type="Animation" id=5]
+resource_name = "ACTION_DOWN"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Mesh:translation:z")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 4, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("StaticBody:translation:z")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 4, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+
 [sub_resource type="Animation" id=4]
 resource_name = "ACTION_FALL"
 tracks/0/type = "bezier"
@@ -44,6 +67,12 @@ tracks/1/keys = {
 "points": PoolRealArray( 0, -0.25, 0, 0.25, 0, -6, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 1 )
 }
+
+[sub_resource type="Animation" id=6]
+resource_name = "ACTION_LEFT"
+
+[sub_resource type="Animation" id=7]
+resource_name = "ACTION_RIGHT"
 
 [sub_resource type="Animation" id=3]
 resource_name = "ACTION_RISE"
@@ -72,6 +101,72 @@ tracks/1/keys = {
 "values": [ Vector3( 0, 0, 0 ), Vector3( 0, 4, 0 ) ]
 }
 
+[sub_resource type="Animation" id=8]
+resource_name = "ACTION_UP"
+
+[sub_resource type="Animation" id=9]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Mesh:translation:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Mesh:translation:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Mesh:translation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("StaticBody:translation:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("StaticBody:translation:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("StaticBody:translation:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
 [node name="Obstacle" type="Spatial"]
 script = ExtResource( 2 )
 
@@ -89,5 +184,10 @@ transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/ACTION_DOWN = SubResource( 5 )
 anims/ACTION_FALL = SubResource( 4 )
+anims/ACTION_LEFT = SubResource( 6 )
+anims/ACTION_RIGHT = SubResource( 7 )
 anims/ACTION_RISE = SubResource( 3 )
+anims/ACTION_UP = SubResource( 8 )
+anims/RESET = SubResource( 9 )

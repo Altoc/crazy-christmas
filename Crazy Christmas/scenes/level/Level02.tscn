@@ -15,7 +15,7 @@ points = PoolVector3Array( -1, -1, -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, -1, 1, 1, 1,
 
 [node name="Level02" type="Spatial"]
 script = ExtResource( 7 )
-nextLevelPath = "res://scenes/level/LevelCredits.tscn"
+nextLevelPath = "res://scenes/level/Level03.tscn"
 
 [node name="Floor" type="Spatial" parent="."]
 
@@ -231,4 +231,4 @@ transform = Transform( -1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, 20, 8, -5
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 10, -12 )
 
 [node name="PlayerSpawn" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 4 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4 )

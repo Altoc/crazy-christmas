@@ -10,7 +10,7 @@ onready var animPlayer = get_node("AnimationPlayer")
 ###CONSTS
 const snowballScenePath = "res://scenes/Snowball.tscn"
 const RAY_LENGTH = 20
-const snowballThrowStrengthMin = Vector3(5, 8, 5)
+const snowballThrowStrengthMin = Vector3(5, 11, 5)
 const snowballThrowStrengthMax = Vector3(25, 3, 25)
 const movementSpeedMax = 10.0
 const movementSpeedIncreaseFactor = 30.0
@@ -47,6 +47,7 @@ func _ready():
 	SIGNAL_BUS.connect("playerTeleportIn", self, "onPlayerTeleportIn")
 	SIGNAL_BUS.connect("playerMoveToSpawn", self, "onPlayerMoveToSpawn")
 	gravity = GLOBALS.GRAVITY
+	SIGNAL_BUS.emit_signal("playerMoveToSpawn", GLOBALS.CURRENT_LEVEL.getPlayerSpawnCoords())
 	onPlayerTeleportIn()
 
 func _process(delta):
@@ -99,6 +100,7 @@ func _input(event):
 
 func onPlayerMoveToSpawn(argTransformOrigin):
 	transform.origin.x = argTransformOrigin.x
+	transform.origin.y = argTransformOrigin.y
 	transform.origin.z = argTransformOrigin.z
 
 func onPlayerTeleportOut():
