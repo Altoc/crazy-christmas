@@ -12,9 +12,9 @@ onready var curtainLabelStartPos
 onready var playOutroTimer = 0
 const playOutroTime = 5
 onready var levelOutroText = {
-	1:"This is \n Level 1's \n outro message!\n\n!",
-	2:"lolz level 2 done",
-	3:"lolz level 3 done",
+	1:"The snowman wants to break free from his globe.\n\nWhy?",
+	2:"The snowman is breaking into another snow globe.\n\nWhy?",
+	3:"Ahh the snowman wanted a friend!",
 	4:"lolz level 4 done",
 	5:"lolz level 5 done",
 	6:"lolz",
