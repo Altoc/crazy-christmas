@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/PlayerMovement.gd" type="Script" id=1]
-[ext_resource path="res://scenes/models/ModelSnowman01.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/models/ModelSnowmanSad.tscn" type="PackedScene" id=2]
 
 [sub_resource type="CapsuleShape" id=1]
 
@@ -9,23 +9,23 @@
 resource_name = "TELEPORT_IN"
 length = 1.5
 tracks/0/type = "bezier"
-tracks/0/path = NodePath("ModelSnowman01:translation:y")
+tracks/0/path = NodePath("ModelSnowmanSad:translation:y")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"points": PoolRealArray( 20.1251, -0.25, 0, 0.25, 0, -0.0295639, -0.89, -0.101031, 0.25, 0 ),
+"points": PoolRealArray( 20, -0.25, 0, 0.25, 0, 0, -1, -2.28342, 0.25, 0 ),
 "times": PoolRealArray( 0, 1.5 )
 }
 tracks/1/type = "bezier"
-tracks/1/path = NodePath("ModelSnowman01:rotation_degrees:y")
+tracks/1/path = NodePath("ModelSnowmanSad:rotation_degrees:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"points": PoolRealArray( 721.786, -0.25, 0, 0.3, -416.654, 90, -0.9, 77.8, 0.25, 0 ),
+"points": PoolRealArray( 720, -0.25, 0, 0.25, 0, 90, -1, 20.8053, 0.25, 0 ),
 "times": PoolRealArray( 0, 1.5 )
 }
 
@@ -33,31 +33,31 @@ tracks/1/keys = {
 resource_name = "TELEPORT_OUT"
 length = 1.5
 tracks/0/type = "bezier"
-tracks/0/path = NodePath("ModelSnowman01:translation:y")
+tracks/0/path = NodePath("ModelSnowmanSad:translation:y")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 1, 0.23318, 20.1251, -0.6, -16.1058, 0.25, 0 ),
+"points": PoolRealArray( 0, -0.25, 0, 1.4, -2.54136, 20, -0.3, -9.42452, 0.25, 0 ),
 "times": PoolRealArray( 0, 1.5 )
 }
 tracks/1/type = "bezier"
-tracks/1/path = NodePath("ModelSnowman01:rotation_degrees:y")
+tracks/1/path = NodePath("ModelSnowmanSad:rotation_degrees:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"points": PoolRealArray( 90, -0.25, 0, 1.4, 25.563, 721.786, -0.7, -119.772, 0.25, 0 ),
-"times": PoolRealArray( 0, 1.5 )
+"points": PoolRealArray( 0, -0.25, 0, 0.4, -2.99067, 4.73834, -0.25, 0, 1.09, 0.482162, 720, -0.4, -174.317, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.01, 1.5 )
 }
 
 [node name="Player" type="KinematicBody" groups=["player"]]
 script = ExtResource( 1 )
 
-[node name="ModelSnowman01" parent="." instance=ExtResource( 2 )]
-transform = Transform( 0.999514, 0, 0.0311671, 0, 1, 0, -0.0311671, 0, 0.999514, 0, 20.1251, 0 )
+[node name="ModelSnowmanSad" parent="." instance=ExtResource( 2 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.70947, -0.0166945 )

@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/snowman_01.glb-2cc210e0b56f4d7553fd15bc7ad3fbb3.scn"
+path="res://.import/Snowglobe_01.glb-2beab681e2645b42a567f2dd4a42d527.scn"
 
 [deps]
 
-source_file="res://models/snowman_01.glb"
-dest_files=[ "res://.import/snowman_01.glb-2cc210e0b56f4d7553fd15bc7ad3fbb3.scn" ]
+source_file="res://models/Snowglobe_01.glb"
+dest_files=[ "res://.import/Snowglobe_01.glb-2beab681e2645b42a567f2dd4a42d527.scn" ]
 
 [params]
 
