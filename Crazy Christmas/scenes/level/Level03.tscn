@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/Button.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/TeleportOut.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://scenes/models/ModelCabin.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/models/ModelPineTree.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/models/ModelWoodPile.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/obstacles/TrapPit.tscn" type="PackedScene" id=13]
 
 [node name="Level03" type="Spatial"]
 script = ExtResource( 7 )
@@ -153,10 +154,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 2, -16 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 2, -20 )
 
 [node name="Wall36" parent="Walls" instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 2, -23.5 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 2, -24 )
 
 [node name="Wall38" parent="Walls" instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 6, -23.5 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 6, -24 )
 
 [node name="Wall31" parent="Walls" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, -8 )
@@ -252,6 +253,42 @@ signalChannel = 4
 [node name="ObstacleWall" parent="Obstacles" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 16, -28 )
 signalChannel = 3
+
+[node name="TrapPit" parent="Obstacles" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, -1.5, -16 )
+
+[node name="TrapPit2" parent="Obstacles" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, -1.5, -20 )
+
+[node name="TrapPit3" parent="Obstacles" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, -1.5, -20 )
+
+[node name="TrapPit4" parent="Obstacles" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, -1.5, -16 )
+
+[node name="TrapPit5" parent="Obstacles" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, -1.5, -12 )
+
+[node name="TrapPit6" parent="Obstacles" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, -1.5, -12 )
+
+[node name="TrapPit7" parent="Obstacles" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, -1.5, -12 )
+
+[node name="TrapPit8" parent="Obstacles" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, -1.5, -24 )
+
+[node name="TrapPit12" parent="Obstacles" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, -1.5, -28 )
+
+[node name="TrapPit9" parent="Obstacles" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, -1.5, -24 )
+
+[node name="TrapPit10" parent="Obstacles" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, -1.5, -28 )
+
+[node name="TrapPit11" parent="Obstacles" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, -1.5, -28 )
 
 [node name="Decor" type="Spatial" parent="."]
 
@@ -454,10 +491,10 @@ transform = Transform( -0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 6, 5, -35
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 2, -35.5 )
 
 [node name="ModelCampFire2" parent="Decor" instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 2, -28 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, -28 )
 
 [node name="ModelWoodPile" parent="Decor" instance=ExtResource( 12 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.5, 2, -19 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14.5, 2, -16 )
 
 [node name="TeleportOut" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 22, -32 )
