@@ -12,9 +12,9 @@ onready var curtainLabelStartPos
 onready var playOutroTimer = 0
 const playOutroTime = 5
 onready var levelOutroText = {
-	1:"The snowman wants to break free from his globe.\n\nWhy?",
-	2:"The snowman is breaking into another snow globe.\n\nWhy?",
-	3:"Ahh the snowman wanted a friend!",
+	1:"There once lived a snowman, who lived inside a globe.\n\nThe snowman remembered being happy there, once...",
+	2:"But the snowman hadn't been happy in a very long time.\n\nThe snowman began to search his globe for happiness.",
+	3:"\"Who was that?\" thought the snowman.\n\nSuddenly, the snowman realized; He was lonely.",
 	4:"lolz level 4 done",
 	5:"lolz level 5 done",
 	6:"lolz",
