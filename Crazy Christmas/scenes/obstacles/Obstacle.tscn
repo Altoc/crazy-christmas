@@ -171,7 +171,7 @@ tracks/5/keys = {
 script = ExtResource( 2 )
 
 [node name="Mesh" type="MeshInstance" parent="."]
-transform = Transform( 1.98, 0, 0, 0, 2, 0, 0, 0, 1.98, 0, 0, 0 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
 mesh = SubResource( 1 )
 material/0 = ExtResource( 3 )
 

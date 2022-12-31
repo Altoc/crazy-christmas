@@ -20,12 +20,14 @@ onready var currState = STATES.UNPRESSED
 export var signalChannel = -1
 export var actionIdx = -1
 
+export var buttonColor = Color(0, 1, 0)
+
 ##FUNCS
 
 func _ready():
 	#make mesh unique so changing color doenst effect other buttons
 	meshInstance.set_surface_material(0, meshInstance.get_active_material(0).duplicate(true))
-	meshInstance.get_surface_material(0).albedo_color = GLOBALS.COLOR_RED
+	meshInstance.get_surface_material(0).albedo_color = buttonColor
 
 func press():
 	setState(STATES.PRESSED)

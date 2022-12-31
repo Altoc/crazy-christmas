@@ -46,6 +46,7 @@ func _ready():
 	SIGNAL_BUS.connect("playerTeleportOut", self, "onPlayerTeleportOut")
 	SIGNAL_BUS.connect("playerTeleportIn", self, "onPlayerTeleportIn")
 	SIGNAL_BUS.connect("playerMoveToSpawn", self, "onPlayerMoveToSpawn")
+	SIGNAL_BUS.connect("playerDie", self, "die")
 	gravity = GLOBALS.GRAVITY
 	SIGNAL_BUS.emit_signal("playerMoveToSpawn", GLOBALS.CURRENT_LEVEL.getPlayerSpawnCoords())
 	onPlayerTeleportIn()
@@ -181,3 +182,8 @@ func setPlayerState(argNewState):
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	SIGNAL_BUS.emit_signal("playerAnimationFinished", anim_name)
+
+func die():
+	#play death anim
+	SIGNAL_BUS.emit_signal("playerTeleportIn")
+	SIGNAL_BUS.emit_signal("playerMoveToSpawn", GLOBALS.CURRENT_LEVEL.getPlayerSpawnCoords())

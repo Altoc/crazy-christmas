@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/Button.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/TeleportOut.tscn" type="PackedScene" id=2]
@@ -13,10 +13,10 @@
 [ext_resource path="res://scenes/models/ModelPineTree.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/models/ModelWoodPile.tscn" type="PackedScene" id=12]
 [ext_resource path="res://scenes/obstacles/TrapPit.tscn" type="PackedScene" id=13]
-[ext_resource path="res://scenes/CutsceneTrigger.tscn" type="PackedScene" id=14]
 
 [node name="Level03" type="Spatial"]
 script = ExtResource( 7 )
+nextLevelPath = "res://scenes/level/Level04.tscn"
 
 [node name="Floor" parent="." instance=ExtResource( 6 )]
 
@@ -514,8 +514,3 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 22, -40.5 )
 
 [node name="PlayerSpawn" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2.5, 8 )
-
-[node name="CutsceneTrigger" parent="." instance=ExtResource( 14 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 23, -36 )
-targetObj = NodePath("../Decor/ModelCampFire")
-time = 5

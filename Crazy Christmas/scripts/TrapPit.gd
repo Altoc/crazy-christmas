@@ -28,8 +28,7 @@ func _process(delta):
 			bodyToShrink.scale = shrinkNorm
 			shrinkFactor = 0
 			if(shrinkPlayer):
-				SIGNAL_BUS.emit_signal("playerTeleportIn")
-				SIGNAL_BUS.emit_signal("playerMoveToSpawn", GLOBALS.CURRENT_LEVEL.getPlayerSpawnCoords())
+				SIGNAL_BUS.emit_signal("playerDie")
 				shrinkPlayer = false
 			else:
 				shrinkOther = false

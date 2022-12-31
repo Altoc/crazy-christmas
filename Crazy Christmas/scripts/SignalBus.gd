@@ -6,6 +6,7 @@ signal playerTeleportIn
 signal playerTeleportOut
 signal playerMoveToSpawn
 signal playerAnimationFinished
+signal playerDie
 
 signal cutsceneStart
 signal cutsceneEnd
