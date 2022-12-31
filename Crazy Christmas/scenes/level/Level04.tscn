@@ -24,12 +24,12 @@ signalChannel = 0
 actionIdx = 1
 
 [node name="Button2" parent="Buttons" instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.5, 12.5, 28 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.5, 10.5, 28 )
 signalChannel = 1
 actionIdx = 1
 
 [node name="Button3" parent="Buttons" instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5, 12.5, 24 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5, 11.5, 23 )
 signalChannel = 2
 actionIdx = 1
 
@@ -237,11 +237,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5, 26, 4 )
 [node name="Wall177" parent="Walls" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.5, 26, 4 )
 
-[node name="Wall178" parent="Walls" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5, 26, 8 )
+[node name="Wall187" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5, 26, 8 )
 
-[node name="Wall180" parent="Walls" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.5, 26, 8 )
+[node name="Wall186" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 32.5, 26, 8 )
 
 [node name="Wall181" parent="Walls" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5, 26, 12 )
@@ -256,7 +256,16 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.5, 26, 12 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5, 2, 8 )
 
 [node name="Wall167" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5, 6, 12 )
+
+[node name="Wall179" parent="Walls" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5, 6, 8 )
+
+[node name="Wall184" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5, 6, 8 )
+
+[node name="Wall185" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.5, 6, 8 )
 
 [node name="Wall46" parent="Walls" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5, 2, 24 )
@@ -625,6 +634,14 @@ signalChannel = 1
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5, 24, 8 )
 signalChannel = 5
 
+[node name="ObstacleWall5" parent="Obstacles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.5, 24, 8 )
+signalChannel = 5
+
+[node name="ObstacleWall6" parent="Obstacles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5, 24, 8 )
+signalChannel = 5
+
 [node name="ObstacleWall3" parent="Obstacles" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5, 0, 16 )
 signalChannel = 1
@@ -643,10 +660,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 4, 40 )
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 32.5, 4, 20 )
 
 [node name="ObstacleRamp11" parent="Obstacles" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5, 4, 16 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5, 4, 20 )
 
 [node name="ObstacleRamp12" parent="Obstacles" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5, 8, 12 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5, 8, 16 )
 
 [node name="ObstacleRamp8" parent="Obstacles" instance=ExtResource( 8 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -11.5, 0, 32 )
@@ -683,6 +700,16 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.5, -1.5, 20 )
 
 [node name="TrapSpikeball" parent="Obstacles" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5, 29, 8 )
+mass = 10.0
+can_sleep = false
+
+[node name="TrapSpikeball2" parent="Obstacles" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5, 29, 8 )
+mass = 10.0
+can_sleep = false
+
+[node name="TrapSpikeball3" parent="Obstacles" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.5, 29, 8 )
 mass = 10.0
 can_sleep = false
 

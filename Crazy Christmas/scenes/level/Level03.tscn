@@ -33,7 +33,7 @@ signalChannel = 1
 actionIdx = 1
 
 [node name="Button3" parent="Buttons" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 6, -19.5 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 10, -24 )
 signalChannel = 2
 actionIdx = 1
 
