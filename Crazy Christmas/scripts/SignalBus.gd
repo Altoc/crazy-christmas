@@ -7,6 +7,9 @@ signal playerTeleportOut
 signal playerMoveToSpawn
 signal playerAnimationFinished
 
+signal cutsceneStart
+signal cutsceneEnd
+
 signal uiToggleCurtain
 signal uiCurtainAnimationFinished
 

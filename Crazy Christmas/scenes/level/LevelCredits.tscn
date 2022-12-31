@@ -2,13 +2,10 @@
 
 [ext_resource path="res://scenes/models/ModelSnowglobe01.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/Credits.gd" type="Script" id=2]
+[ext_resource path="res://TableMaterial.tres" type="Material" id=3]
 [ext_resource path="res://images/wallpaper.png" type="Texture" id=4]
 
 [sub_resource type="CubeMesh" id=1]
-
-[sub_resource type="SpatialMaterial" id=4]
-vertex_color_use_as_albedo = true
-albedo_color = Color( 0.231373, 0.231373, 0.231373, 1 )
 
 [sub_resource type="CubeMesh" id=2]
 size = Vector3( 5, 5, 5 )
@@ -51,7 +48,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, -2, 0 )
 transform = Transform( 50, 0, 0, 0, 1, 0, 0, 0, 50, 17.2463, 1.11605, 0.0361919 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../../../..")
-material/0 = SubResource( 4 )
+material/0 = ExtResource( 3 )
 
 [node name="Wall" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -6.5, -2, 0 )

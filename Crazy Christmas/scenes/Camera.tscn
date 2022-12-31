@@ -4,6 +4,7 @@
 [ext_resource path="res://scripts/CameraTarget.gd" type="Script" id=2]
 
 [node name="Camera" type="Spatial"]
+pause_mode = 2
 transform = Transform( 1, 0, 0, 0, 0.477251, 0.878767, 0, -0.878767, 0.477251, 0, 0, 0 )
 
 [node name="Camera" type="Camera" parent="."]

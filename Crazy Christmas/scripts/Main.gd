@@ -15,6 +15,14 @@ func _process(_delta):
 func togglePauseGame():
 	GLOBALS.PAUSED = !GLOBALS.PAUSED
 	get_tree().paused = GLOBALS.PAUSED
+	
+func pauseGame():
+	GLOBALS.PAUSED = true
+	get_tree().paused = true
+	
+func unpauseGame():
+	GLOBALS.PAUSED = false
+	get_tree().paused = false
 
 func endGame():
 	SIGNAL_BUS.emit_signal("playerTeleportOut")

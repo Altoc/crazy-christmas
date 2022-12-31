@@ -1,7 +1,7 @@
 extends Spatial
 
 onready var endGameTimer = 0
-const endGameTime = 0.5
+const endGameTime = 0.25
 onready var endGameFlag = false
 
 ###REFS
