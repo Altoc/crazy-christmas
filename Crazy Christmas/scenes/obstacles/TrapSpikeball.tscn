@@ -1,10 +1,32 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/models/ModelSpikeball.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/TrapSpikeball.gd" type="Script" id=2]
+[ext_resource path="res://scripts/Particles.gd" type="Script" id=3]
 
 [sub_resource type="SphereShape" id=1]
-radius = 1.5
+radius = 1.36743
+
+[sub_resource type="SphereShape" id=2]
+radius = 1.70438
+
+[sub_resource type="ParticlesMaterial" id=3]
+direction = Vector3( 1, 1, 1 )
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 1.0
+linear_accel = 2.0
+
+[sub_resource type="SpatialMaterial" id=4]
+vertex_color_use_as_albedo = true
+albedo_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="SphereMesh" id=5]
+material = SubResource( 4 )
+radius = 0.1
+height = 0.2
+radial_segments = 6
+rings = 3
 
 [node name="TrapSpikeball" type="RigidBody"]
 collision_layer = 3
@@ -18,4 +40,15 @@ script = ExtResource( 2 )
 [node name="CollisionShape" type="CollisionShape" parent="."]
 shape = SubResource( 1 )
 
-[connection signal="body_entered" from="." to="." method="_on_TrapSpikeball_body_entered"]
+[node name="Area" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+shape = SubResource( 2 )
+
+[node name="Particles" type="Particles" parent="."]
+amount = 20
+process_material = SubResource( 3 )
+draw_pass_1 = SubResource( 5 )
+script = ExtResource( 3 )
+
+[connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]

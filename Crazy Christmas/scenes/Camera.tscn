@@ -9,7 +9,7 @@ transform = Transform( 1, 0, 0, 0, 0.477251, 0.878767, 0, -0.878767, 0.477251, 0
 
 [node name="Camera" type="Camera" parent="."]
 current = true
-far = 75.0
+far = 125.0
 script = ExtResource( 1 )
 
 [node name="Target" type="Spatial" parent="."]

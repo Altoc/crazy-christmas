@@ -716,7 +716,16 @@ can_sleep = false
 [node name="Decor" type="Spatial" parent="."]
 
 [node name="Torch" parent="Decor" instance=ExtResource( 2 )]
-transform = Transform( -1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, -15, 5, -13.5 )
+transform = Transform( -4.56956e-08, 0, -1, 0, 1, 0, 1, 0, -4.56956e-08, -25, 12.5, 28 )
+
+[node name="Torch2" parent="Decor" instance=ExtResource( 2 )]
+transform = Transform( -4.17272e-08, 0, 1, 0, 1, 0, -1, 0, -4.17272e-08, -22, 13, 23 )
+
+[node name="Torch3" parent="Decor" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -8.54386e-08, 0, 1, 0, 8.54386e-08, 0, -1, 20.5, 8, 10.5 )
+
+[node name="Torch4" parent="Decor" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -8.54386e-08, 0, 1, 0, 8.54386e-08, 0, -1, 28.5, 8, 10.5 )
 
 [node name="TeleportOut" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 30, 0 )

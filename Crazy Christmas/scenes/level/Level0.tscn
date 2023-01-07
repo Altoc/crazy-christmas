@@ -1,0 +1,57 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://scenes/Wall.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Torch.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scripts/Level.gd" type="Script" id=4]
+[ext_resource path="res://scenes/obstacles/ObstacleWall.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/Floor.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/models/ModelPineTree.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/TeleportOut.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/CutsceneTrigger.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/obstacles/ObstacleRamp.tscn" type="PackedScene" id=10]
+
+[node name="Level0" type="Spatial"]
+script = ExtResource( 4 )
+
+[node name="Floor" parent="." instance=ExtResource( 6 )]
+
+[node name="Buttons" type="Spatial" parent="."]
+
+[node name="Button" parent="Buttons" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5, 4, -12 )
+signalChannel = 0
+actionIdx = 2
+
+[node name="Walls" type="Spatial" parent="."]
+
+[node name="Wall" parent="Walls" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 2, 0 )
+
+[node name="Obstacles" type="Spatial" parent="."]
+
+[node name="ObstacleWall" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 4, -16 )
+signalChannel = 0
+
+[node name="ObstacleRamp" parent="Obstacles" instance=ExtResource( 10 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.5, 4, 0 )
+
+[node name="Decor" type="Spatial" parent="."]
+
+[node name="Torch" parent="Decor" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, -15, 5, -13.5 )
+
+[node name="ModelPineTree" parent="Decor" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 6, -8.5 )
+
+[node name="TeleportOut" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 2, -28 )
+
+[node name="PlayerSpawn" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 2, 0 )
+
+[node name="CutsceneTrigger" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -11.5 )
+targetObj = NodePath("../Buttons/Button")
+time = 3

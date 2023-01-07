@@ -9,7 +9,7 @@ onready var camera = get_node("/root/Main/Game/Camera/Camera")
 export(NodePath) var targetObj
 onready var cameraMovementFactor = 0
 onready var cameraRotationFactor = 0
-onready var playCutscene = false
+onready var playCutscene = 0
 onready var cameraStartPos = Vector3.ZERO
 onready var cameraTargetPos = Vector3.ZERO
 onready var cameraStartRot = Vector3.ZERO
@@ -25,10 +25,10 @@ func _ready():
 			get_node(targetObj).transform.origin.z + 4
 		)
 		cameraTargetRot = Vector3(0, 30, 30)
-		cameraStartRot = get_node(targetObj).rotation
+		cameraStartRot = camera.rotation
 
 func _process(delta):
-	if(playCutscene):
+	if(playCutscene == 1):
 		if(camera.global_transform.origin.distance_to(cameraTargetPos) > 0.1):
 			cameraMovementFactor += delta * 0.5
 			cameraRotationFactor += delta * 0.01
@@ -41,12 +41,12 @@ func _process(delta):
 				MAIN.unpauseGame()
 				timer = 0
 				cameraMovementFactor = 0
-				playCutscene = false
+				playCutscene = 2
 				SIGNAL_BUS.emit_signal("cutsceneEnd")
 
 func _on_CutsceneTrigger_body_entered(body):
-	if(body.is_in_group("player")):
-		playCutscene = true
+	if(body.is_in_group("player") && playCutscene == 0):
+		playCutscene += 1
 		cameraStartPos = camera.global_transform.origin
 		MAIN.pauseGame()
 		SIGNAL_BUS.emit_signal("cutsceneStart")

@@ -14,6 +14,6 @@ func _ready():
 func onPlayerMoveToSpawn(_argPlayerSpawnCoords):
 	transform.origin = startPos
 
-func _on_TrapSpikeball_body_entered(body):
+func _on_Area_body_entered(body):
 	if(body.is_in_group("player")):
 		SIGNAL_BUS.emit_signal("playerDie")
