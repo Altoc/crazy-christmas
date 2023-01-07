@@ -36,11 +36,13 @@ func onStartGame():
 	yield(animPlayer, "animation_finished")
 	mainMenuContainer.visible = false
 
-func onPauseGame():
-	pauseContainer.visible = true
+func onPauseGame(_argPauseMusicFlag, argShowMenuFlag):
+	if(argShowMenuFlag):
+		pauseContainer.visible = true
 
-func onResumeGame():
-	pauseContainer.visible = false
+func onResumeGame(_argResumeMusicFlag, argHideMenuFlag):
+	if(argHideMenuFlag):
+		pauseContainer.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -66,7 +68,7 @@ func toggleCurtain():
 		playOutro = false
 
 func _on_BtnResume_pressed():
-	SIGNAL_BUS.emit_signal("resumeGame")
+	SIGNAL_BUS.emit_signal("resumeGame", true, true)
 
 func _on_HSlider_value_changed(value):
 	SIGNAL_BUS.emit_signal("changeVolume", value)

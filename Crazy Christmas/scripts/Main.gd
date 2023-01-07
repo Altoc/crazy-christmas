@@ -14,9 +14,9 @@ func _ready():
 func _process(_delta):
 	if(Input.is_action_just_released("ui_cancel")):
 		if(GLOBALS.PAUSED):
-			SIGNAL_BUS.emit_signal("resumeGame")
+			SIGNAL_BUS.emit_signal("resumeGame", true, true)
 		else:
-			SIGNAL_BUS.emit_signal("pauseGame")
+			SIGNAL_BUS.emit_signal("pauseGame", true, true)
 
 func startGame():
 	changeLevel()
@@ -25,13 +25,15 @@ func togglePauseGame():
 	GLOBALS.PAUSED = !GLOBALS.PAUSED
 	get_tree().paused = GLOBALS.PAUSED
 	
-func pauseGame():
-	SIGNAL_BUS.emit_signal("pauseMusic")
+func pauseGame(pauseMusicFlag, _showMenuFlag):
+	if(pauseMusicFlag):
+		SIGNAL_BUS.emit_signal("pauseMusic")
 	GLOBALS.PAUSED = true
 	get_tree().paused = true
 	
-func unpauseGame():
-	SIGNAL_BUS.emit_signal("resumeMusic")
+func unpauseGame(resumeMusicFlag, _hideMenuFlag):
+	if(resumeMusicFlag):
+		SIGNAL_BUS.emit_signal("resumeMusic")
 	GLOBALS.PAUSED = false
 	get_tree().paused = false
 

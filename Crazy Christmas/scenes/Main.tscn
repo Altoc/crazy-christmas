@@ -74,7 +74,7 @@ nextLevelPath = "res://scenes/level/Level01.tscn"
 transform = Transform( 1, 0, 0, 0, 0.477251, 0.878767, 0, -0.878767, 0.477251, -1, 20, 12 )
 
 [node name="Player" parent="Game" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.97406, -13 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.97406, -25 )
 
 [node name="SnowParticles" type="Particles" parent="Game"]
 amount = 1000

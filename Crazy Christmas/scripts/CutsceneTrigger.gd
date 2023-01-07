@@ -1,7 +1,6 @@
 extends Area
 
 ###REFS
-onready var MAIN = get_node("/root/Main")
 onready var GLOBALS = get_node("/root/Main/Globals")
 onready var SIGNAL_BUS = get_node("/root/Main/SignalBus")
 
@@ -38,7 +37,7 @@ func _process(delta):
 		else:
 			timer += delta
 			if(timer >= time):
-				MAIN.unpauseGame()
+				SIGNAL_BUS.emit_signal("resumeGame", false, false)
 				timer = 0
 				cameraMovementFactor = 0
 				playCutscene = 2
@@ -48,5 +47,5 @@ func _on_CutsceneTrigger_body_entered(body):
 	if(body.is_in_group("player") && playCutscene == 0):
 		playCutscene += 1
 		cameraStartPos = camera.global_transform.origin
-		MAIN.pauseGame()
+		SIGNAL_BUS.emit_signal("pauseGame", false, false)
 		SIGNAL_BUS.emit_signal("cutsceneStart")
