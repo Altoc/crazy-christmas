@@ -5,22 +5,29 @@ onready var SIGNAL_BUS = get_node("SignalBus")
 
 func _ready():
 	GLOBALS.RNG.randomize()
+	SIGNAL_BUS.connect("pauseGame", self, "pauseGame")
+	SIGNAL_BUS.connect("resumeGame", self, "unpauseGame")
 	SIGNAL_BUS.connect("playerAnimationFinished", self, "onPlayerAnimationFinished")
 	SIGNAL_BUS.connect("uiCurtainAnimationFinished", self, "onUiCurtainAnimationFinished")
 
 func _process(_delta):
-	if(Input.is_action_pressed("ui_cancel")):
-		togglePauseGame()
+	if(Input.is_action_just_released("ui_cancel")):
+		if(GLOBALS.PAUSED):
+			SIGNAL_BUS.emit_signal("resumeGame")
+		else:
+			SIGNAL_BUS.emit_signal("pauseGame")
 
 func togglePauseGame():
 	GLOBALS.PAUSED = !GLOBALS.PAUSED
 	get_tree().paused = GLOBALS.PAUSED
 	
 func pauseGame():
+	SIGNAL_BUS.emit_signal("pauseMusic")
 	GLOBALS.PAUSED = true
 	get_tree().paused = true
 	
 func unpauseGame():
+	SIGNAL_BUS.emit_signal("resumeMusic")
 	GLOBALS.PAUSED = false
 	get_tree().paused = false
 

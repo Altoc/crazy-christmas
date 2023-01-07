@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/Wall.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Button.tscn" type="PackedScene" id=2]
@@ -10,9 +10,11 @@
 [ext_resource path="res://scenes/obstacles/ObstacleRamp.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/obstacles/TrapSpikeball.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scripts/Level.gd" type="Script" id=10]
+[ext_resource path="res://scenes/models/ModelPineTree.tscn" type="PackedScene" id=11]
 
 [node name="Level05" type="Spatial"]
 script = ExtResource( 10 )
+nextLevelPath = "res://scenes/level/Level04.tscn"
 
 [node name="Floor" parent="." instance=ExtResource( 5 )]
 
@@ -101,6 +103,9 @@ transform = Transform( 1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 0.5, 28, -4
 
 [node name="Wall174" parent="Walls" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 0.5, 30.5, -45 )
+
+[node name="Wall175" parent="Walls" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, -2.08616e-07, 0, 2.08616e-07, 1, 0.5, 31, -47 )
 
 [node name="Wall128" parent="Walls" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 0.5, 7.15256e-07, 15 )
@@ -893,10 +898,223 @@ mass = 10.0
 [node name="Decor" type="Spatial" parent="."]
 
 [node name="Torch" parent="Decor" instance=ExtResource( 3 )]
-transform = Transform( -1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, -15, 5, -13.5 )
+transform = Transform( -1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, 8.5, 16.5, 11.5 )
+
+[node name="Torch9" parent="Decor" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, 8.5, 8, 27.5 )
+
+[node name="Torch10" parent="Decor" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, -7, 8, 27.5 )
+
+[node name="Torch2" parent="Decor" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, 8.5, 24.5, -4.5 )
+
+[node name="Torch3" parent="Decor" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, 8.5, 32.5, -20.5 )
+
+[node name="Torch4" parent="Decor" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, 8.5, 40.5, -36.5 )
+
+[node name="Torch5" parent="Decor" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, -7.5, 16.5, 11.5 )
+
+[node name="Torch6" parent="Decor" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, -7.5, 24.5, -4.5 )
+
+[node name="Torch7" parent="Decor" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, -7.5, 32.5, -20.5 )
+
+[node name="Torch8" parent="Decor" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, -7.5, 40.5, -36.5 )
+
+[node name="ModelPineTree" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 2, 0 )
+
+[node name="ModelPineTree2" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 2, -8 )
+
+[node name="ModelPineTree3" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.5, 2, -4 )
+
+[node name="ModelPineTree52" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5, 2, -12 )
+
+[node name="ModelPineTree53" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 2, -3 )
+
+[node name="ModelPineTree54" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 2, -25.5 )
+
+[node name="ModelPineTree55" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 2, -25.5 )
+
+[node name="ModelPineTree56" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5, 2, -15.5 )
+
+[node name="ModelPineTree57" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5, 2, -5.5 )
+
+[node name="ModelPineTree58" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5, 2, 5 )
+
+[node name="ModelPineTree59" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -42.5, 2, 45 )
+
+[node name="ModelPineTree60" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 42.5, 2, -20 )
+
+[node name="ModelPineTree61" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 45.5, 2, -5.5 )
+
+[node name="ModelPineTree62" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -49, 2, -11.5 )
+
+[node name="ModelPineTree4" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( -0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, 25.1609, 2, -20.8194 )
+
+[node name="ModelPineTree5" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( -0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, 32.0891, 2, -16.8194 )
+
+[node name="ModelPineTree6" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( -0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, 32.875, 2, -26.1806 )
+
+[node name="ModelPineTree7" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( -0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 37.3373, 2, -42.8571 )
+
+[node name="ModelPineTree8" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( -0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 33.3373, 2, -35.9288 )
+
+[node name="ModelPineTree9" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( -0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 42.6986, 2, -35.1429 )
+
+[node name="ModelPineTree10" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( -0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, 22.264, 2, -42.2086 )
+
+[node name="ModelPineTree11" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( -0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, 14.5366, 2, -40.1381 )
+
+[node name="ModelPineTree12" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( -0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, 20.6003, 2, -32.963 )
+
+[node name="ModelPineTree13" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( -0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, -37.736, 2, -42.2086 )
+
+[node name="ModelPineTree14" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( -0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, -45.4634, 2, -40.1381 )
+
+[node name="ModelPineTree15" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( -0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, -39.3997, 2, -32.963 )
+
+[node name="ModelPineTree16" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( -0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, -15.736, 2, 32.7914 )
+
+[node name="ModelPineTree17" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( -0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, -23.4634, 2, 34.8619 )
+
+[node name="ModelPineTree18" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( -0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, -17.3997, 2, 42.037 )
+
+[node name="ModelPineTree19" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( -0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, 43.264, 2, 32.7914 )
+
+[node name="ModelPineTree20" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( -0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, 35.5366, 2, 34.8619 )
+
+[node name="ModelPineTree21" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( -0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, 41.6003, 2, 42.037 )
+
+[node name="ModelPineTree22" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 24.5232, 2, 41.2779 )
+
+[node name="ModelPineTree23" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 22.4526, 2, 33.5505 )
+
+[node name="ModelPineTree24" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 15.2775, 2, 39.6142 )
+
+[node name="ModelPineTree25" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 24.5232, 2, 17.2779 )
+
+[node name="ModelPineTree26" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 22.4526, 2, 9.55051 )
+
+[node name="ModelPineTree27" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 15.2775, 2, 15.6142 )
+
+[node name="ModelPineTree28" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -28.9768, 2, -17.7221 )
+
+[node name="ModelPineTree29" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -31.0474, 2, -25.4495 )
+
+[node name="ModelPineTree30" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -38.2225, 2, -19.3858 )
+
+[node name="ModelPineTree31" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( -0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, -35.6713, 2, -9.74326 )
+
+[node name="ModelPineTree32" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( -0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, -37.7418, 2, -2.01585 )
+
+[node name="ModelPineTree33" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( -0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, -28.4962, 2, -3.6796 )
+
+[node name="ModelPineTree34" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( -0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, -24.1713, 2, -43.2433 )
+
+[node name="ModelPineTree35" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( -0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, -26.2418, 2, -35.5159 )
+
+[node name="ModelPineTree36" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( -0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, -16.9962, 2, -37.1796 )
+
+[node name="ModelPineTree37" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( -0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, -24.1713, 2, 13.7567 )
+
+[node name="ModelPineTree38" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( -0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, -26.2418, 2, 21.4841 )
+
+[node name="ModelPineTree39" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( -0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, -16.9962, 2, 19.8204 )
+
+[node name="ModelPineTree40" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( -0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, -41.1713, 2, 24.2567 )
+
+[node name="ModelPineTree41" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( -0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, -43.2418, 2, 31.9841 )
+
+[node name="ModelPineTree42" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( -0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, -33.9962, 2, 30.3204 )
+
+[node name="ModelPineTree43" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -36.0667, 2, 15.4841 )
+
+[node name="ModelPineTree44" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -33.9962, 2, 7.75674 )
+
+[node name="ModelPineTree45" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -43.2418, 2, 9.42048 )
+
+[node name="ModelPineTree46" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( 0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 39.8463, 2, 16.0131 )
+
+[node name="ModelPineTree47" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( 0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 43.8463, 2, 9.08486 )
+
+[node name="ModelPineTree48" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( 0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 34.4851, 2, 8.29897 )
+
+[node name="ModelPineTree49" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( -0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, 32.8278, 2, 19.6923 )
+
+[node name="ModelPineTree50" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( -0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, 30.7573, 2, 27.4197 )
+
+[node name="ModelPineTree51" parent="Decor" instance=ExtResource( 11 )]
+transform = Transform( -0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, 40.0029, 2, 25.756 )
 
 [node name="TeleportOut" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 2, -28 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 35, -47 )
 
 [node name="PlayerSpawn" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 2, 37 )

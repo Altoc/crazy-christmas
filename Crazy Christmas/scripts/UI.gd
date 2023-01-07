@@ -4,6 +4,7 @@ onready var MAIN = get_node("/root/Main")
 onready var GLOBALS = get_node("/root/Main/Globals")
 onready var SIGNAL_BUS = get_node("/root/Main/SignalBus")
 
+onready var pauseContainer = get_node("PauseContainer")
 onready var animPlayer = get_node("AnimationPlayer")
 onready var curtain = get_node("Curtain")
 onready var curtainLabel = get_node("Curtain/Label")
@@ -23,8 +24,16 @@ onready var levelOutroText = {
 
 func _ready():
 	SIGNAL_BUS.connect("uiToggleCurtain", self, "toggleCurtain")
+	SIGNAL_BUS.connect("pauseGame", self, "onPauseGame")
+	SIGNAL_BUS.connect("resumeGame", self, "onResumeGame")
 	curtainLabelStartPos = curtainLabel.rect_position
 	curtainLabel.text = levelOutroText[1]
+
+func onPauseGame():
+	pauseContainer.visible = true
+
+func onResumeGame():
+	pauseContainer.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -48,3 +57,9 @@ func toggleCurtain():
 		curtainLabel.rect_position = curtainLabelStartPos
 		curtainLabel.text = levelOutroText[GLOBALS.CURRENT_LEVEL_ID]
 		playOutro = false
+
+func _on_BtnResume_pressed():
+	SIGNAL_BUS.emit_signal("resumeGame")
+
+func _on_HSlider_value_changed(value):
+	SIGNAL_BUS.emit_signal("changeVolume", value)
