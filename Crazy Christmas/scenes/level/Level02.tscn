@@ -16,6 +16,7 @@
 [node name="Level02" type="Spatial"]
 script = ExtResource( 7 )
 nextLevelPath = "res://scenes/level/Level03.tscn"
+myLevel = 2
 
 [node name="Floor" parent="." instance=ExtResource( 5 )]
 

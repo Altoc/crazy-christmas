@@ -13,6 +13,7 @@
 
 [node name="Level0" type="Spatial"]
 script = ExtResource( 4 )
+myLevel = 0
 
 [node name="Floor" parent="." instance=ExtResource( 6 )]
 
@@ -31,7 +32,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 2, 0 )
 [node name="Obstacles" type="Spatial" parent="."]
 
 [node name="ObstacleWall" parent="Obstacles" instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 4, -16 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 46.5, -16 )
 signalChannel = 0
 
 [node name="ObstacleRamp" parent="Obstacles" instance=ExtResource( 10 )]

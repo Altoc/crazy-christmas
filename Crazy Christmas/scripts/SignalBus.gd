@@ -14,6 +14,7 @@ signal resumeMusic
 
 signal changeVolume
 
+signal startGame
 signal pauseGame
 signal resumeGame
 

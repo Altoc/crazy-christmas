@@ -3,7 +3,7 @@ extends Node
 ###GLOBALS
 onready var PAUSED = false
 onready var RNG = RandomNumberGenerator.new()
-onready var CURRENT_LEVEL_ID = 1
+onready var CURRENT_LEVEL_ID = 0
 onready var CURRENT_LEVEL_PARENT = get_node("../Game/LevelSlot")
 onready var CURRENT_LEVEL = CURRENT_LEVEL_PARENT.get_child(0)
 

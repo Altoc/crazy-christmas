@@ -48,8 +48,6 @@ func _ready():
 	SIGNAL_BUS.connect("playerMoveToSpawn", self, "onPlayerMoveToSpawn")
 	SIGNAL_BUS.connect("playerDie", self, "die")
 	gravity = GLOBALS.GRAVITY
-	SIGNAL_BUS.emit_signal("playerMoveToSpawn", GLOBALS.CURRENT_LEVEL.getPlayerSpawnCoords())
-	onPlayerTeleportIn()
 
 func _process(delta):
 	if(currPlayerState != PLAYER_STATES.STOP):

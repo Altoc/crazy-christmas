@@ -5,6 +5,7 @@ onready var SIGNAL_BUS = get_node("SignalBus")
 
 func _ready():
 	GLOBALS.RNG.randomize()
+	SIGNAL_BUS.connect("startGame", self, "startGame")
 	SIGNAL_BUS.connect("pauseGame", self, "pauseGame")
 	SIGNAL_BUS.connect("resumeGame", self, "unpauseGame")
 	SIGNAL_BUS.connect("playerAnimationFinished", self, "onPlayerAnimationFinished")
@@ -16,6 +17,9 @@ func _process(_delta):
 			SIGNAL_BUS.emit_signal("resumeGame")
 		else:
 			SIGNAL_BUS.emit_signal("pauseGame")
+
+func startGame():
+	changeLevel()
 
 func togglePauseGame():
 	GLOBALS.PAUSED = !GLOBALS.PAUSED
@@ -40,12 +44,15 @@ func onUiCurtainAnimationFinished():
 
 func onPlayerAnimationFinished(argAnimation):
 	if(argAnimation == "TELEPORT_OUT"):
-		SIGNAL_BUS.emit_signal("uiToggleCurtain")
-		yield(SIGNAL_BUS, "uiCurtainAnimationFinished")
-		if(GLOBALS.CURRENT_LEVEL.nextLevelPath == "res://scenes/level/LevelCredits.tscn"):
-			loadCredits()
-		else:
-			loadLevel()
+		changeLevel()
+
+func changeLevel():
+	SIGNAL_BUS.emit_signal("uiToggleCurtain")
+	yield(SIGNAL_BUS, "uiCurtainAnimationFinished")
+	if(GLOBALS.CURRENT_LEVEL.nextLevelPath == "res://scenes/level/LevelCredits.tscn"):
+		loadCredits()
+	else:
+		loadLevel()
 
 func loadLevel():
 	GLOBALS.CURRENT_LEVEL_ID += 1

@@ -5,6 +5,7 @@ onready var GLOBALS = get_node("/root/Main/Globals")
 onready var SIGNAL_BUS = get_node("/root/Main/SignalBus")
 
 onready var pauseContainer = get_node("PauseContainer")
+onready var mainMenuContainer = get_node("MainMenuContainer")
 onready var animPlayer = get_node("AnimationPlayer")
 onready var curtain = get_node("Curtain")
 onready var curtainLabel = get_node("Curtain/Label")
@@ -24,10 +25,16 @@ onready var levelOutroText = {
 
 func _ready():
 	SIGNAL_BUS.connect("uiToggleCurtain", self, "toggleCurtain")
+	SIGNAL_BUS.connect("startGame", self, "onStartGame")
 	SIGNAL_BUS.connect("pauseGame", self, "onPauseGame")
 	SIGNAL_BUS.connect("resumeGame", self, "onResumeGame")
 	curtainLabelStartPos = curtainLabel.rect_position
 	curtainLabel.text = levelOutroText[1]
+
+func onStartGame():
+	toggleCurtain()
+	yield(animPlayer, "animation_finished")
+	mainMenuContainer.visible = false
 
 func onPauseGame():
 	pauseContainer.visible = true
@@ -63,3 +70,6 @@ func _on_BtnResume_pressed():
 
 func _on_HSlider_value_changed(value):
 	SIGNAL_BUS.emit_signal("changeVolume", value)
+
+func _on_Button_pressed():
+	SIGNAL_BUS.emit_signal("startGame")

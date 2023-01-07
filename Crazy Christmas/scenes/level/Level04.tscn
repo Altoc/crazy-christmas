@@ -13,6 +13,7 @@
 
 [node name="Level04" type="Spatial"]
 script = ExtResource( 1 )
+myLevel = 5
 
 [node name="Floor" parent="." instance=ExtResource( 6 )]
 
