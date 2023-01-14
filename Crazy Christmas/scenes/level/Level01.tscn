@@ -187,7 +187,7 @@ transform = Transform( 8.54386e-08, 0, -1, 0, 1, 0, 1, 0, 8.54386e-08, -1, 5, -2
 transform = Transform( -1.72861e-07, 0, 1, 0, 1, 0, -1, 0, -1.72861e-07, 14, 5, -28 )
 
 [node name="ModelPineTree" parent="Decor" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 6, -8.5 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 6, -16 )
 
 [node name="ModelPineTree2" parent="Decor" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22.5, 2, -29.5 )

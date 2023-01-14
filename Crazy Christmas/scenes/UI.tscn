@@ -184,9 +184,9 @@ align = 1
 margin_top = 140.0
 margin_right = 168.0
 margin_bottom = 156.0
-min_value = -50.0
+min_value = -30.0
 max_value = -10.0
-value = -10.0
+value = -20.0
 
 [node name="HSeparator2" type="HSeparator" parent="PauseContainer/Panel/HBoxContainer/VBoxContainer"]
 margin_top = 160.0

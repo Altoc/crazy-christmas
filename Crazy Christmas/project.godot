@@ -21,6 +21,10 @@ window/size/height=300
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
+[global]
+
+bus=false
+
 [input]
 
 PlayerForward={

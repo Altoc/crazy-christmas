@@ -54,6 +54,7 @@ pause_mode = 2
 script = ExtResource( 7 )
 
 [node name="SoundManager" type="AudioStreamPlayer" parent="."]
+bus = "Music"
 script = ExtResource( 8 )
 
 [node name="UI" parent="." instance=ExtResource( 6 )]
@@ -68,7 +69,6 @@ environment = SubResource( 11 )
 [node name="LevelSlot" type="Spatial" parent="Game"]
 
 [node name="Level0" parent="Game/LevelSlot" instance=ExtResource( 1 )]
-nextLevelPath = "res://scenes/level/Level01.tscn"
 
 [node name="Camera" parent="Game" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 0.477251, 0.878767, 0, -0.878767, 0.477251, -1, 20, 12 )

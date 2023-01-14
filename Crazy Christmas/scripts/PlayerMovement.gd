@@ -113,7 +113,7 @@ func onPlayerTeleportIn():
 	setPlayerState(PLAYER_STATES.IDLE)
 
 func chargeSnowball(delta):
-	snowballChargeFactor += delta * 1
+	snowballChargeFactor += delta * 0.9
 	if(snowballChargeFactor < 1.0):
 		snowballThrowStrength = snowballThrowStrengthMin + (snowballThrowStrengthMax - snowballThrowStrengthMin) * snowballChargeFactor
 	SIGNAL_BUS.emit_signal("playerChargingSnowball", snowballChargeFactor)

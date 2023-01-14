@@ -15,11 +15,10 @@ func _ready():
 	SIGNAL_BUS.connect("changeVolume", self, "changeVolume")
 	SIGNAL_BUS.connect("pauseMusic", self, "pauseMusic")
 	SIGNAL_BUS.connect("resumeMusic", self, "resumeMusic")
-	volume_db = -10
+	volume_db = -20
 
 func changeVolume(value):
 	volume_db = value
-	print(volume_db)
 
 func pauseMusic():
 	pauseTime = get_playback_position()
