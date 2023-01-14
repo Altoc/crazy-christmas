@@ -3,6 +3,7 @@
 [ext_resource path="res://scripts/TrapPit.gd" type="Script" id=1]
 
 [sub_resource type="CubeMesh" id=1]
+size = Vector3( 1.99, 1.99, 1.99 )
 
 [sub_resource type="SpatialMaterial" id=2]
 vertex_color_use_as_albedo = true

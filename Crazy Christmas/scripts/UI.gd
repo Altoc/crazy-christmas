@@ -14,13 +14,14 @@ onready var curtainLabelStartPos
 onready var playOutroTimer = 0
 const playOutroTime = 5
 onready var levelOutroText = {
-	1:"There once lived a snowman, who lived inside a globe.\n\nThe snowman remembered being happy there, once...",
-	2:"But the snowman hadn't been happy in a very long time.\n\nThe snowman began to search his globe for happiness.",
-	3:"\"Who was that?\" thought the snowman.\n\nSuddenly, the snowman realized; He was lonely.",
-	4:"lolz level 4 done",
-	5:"lolz level 5 done",
-	6:"lolz",
-	7:"",
+	0:"This is the story of a snowman.",
+	1:"The snowman lived inside of a snow globe, all by himself.",
+	2:"The snowman was very lonely, he had nobody to chill with in his snowglobe.",
+	3:"\"Who is that?\"",
+	4:"The snowman was determined to visit this other snowman, and become friends.",
+	5:"Nothing can stop the snowman from getting to his new friend.",
+	6:"\"At last!\" The snowman made it.",
+	7:"What a wonderful ending.",
 }
 
 func _ready():
@@ -56,6 +57,8 @@ func _process(delta):
 func toggleCurtain():
 	#if alpha is invisible
 	if(curtain.modulate.a == 0):
+		curtainLabel.rect_position = curtainLabelStartPos
+		curtainLabel.text = levelOutroText[GLOBALS.CURRENT_LEVEL_ID]
 		animPlayer.play("FADE_IN")
 		yield(animPlayer, "animation_finished")
 		playOutro = true
@@ -63,8 +66,6 @@ func toggleCurtain():
 		animPlayer.play("FADE_OUT")
 		yield(animPlayer, "animation_finished")
 		SIGNAL_BUS.emit_signal("uiCurtainAnimationFinished")
-		curtainLabel.rect_position = curtainLabelStartPos
-		curtainLabel.text = levelOutroText[GLOBALS.CURRENT_LEVEL_ID]
 		playOutro = false
 
 func _on_BtnResume_pressed():

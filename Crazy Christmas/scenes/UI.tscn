@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/SnowballChargeProgressBar.gd" type="Script" id=1]
 [ext_resource path="res://images/backdrop_01.png" type="Texture" id=2]
 [ext_resource path="res://scripts/UI.gd" type="Script" id=3]
+[ext_resource path="res://MainTheme.tres" type="Theme" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "FADE_IN"
@@ -49,6 +50,7 @@ tracks/0/keys = {
 pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 4 )
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -244,27 +246,27 @@ size_flags_vertical = 3
 
 [node name="MarginContainer3" type="MarginContainer" parent="MainMenuContainer/Panel/HBoxContainer/VBoxContainer"]
 margin_right = 168.0
-margin_bottom = 111.0
+margin_bottom = 112.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="MainMenuContainer/Panel/HBoxContainer/VBoxContainer"]
-margin_top = 115.0
+margin_top = 116.0
 margin_right = 168.0
-margin_bottom = 129.0
+margin_bottom = 130.0
 text = "Lonely Winter"
 align = 1
 
 [node name="MarginContainer5" type="MarginContainer" parent="MainMenuContainer/Panel/HBoxContainer/VBoxContainer"]
-margin_top = 133.0
+margin_top = 134.0
 margin_right = 168.0
-margin_bottom = 160.0
+margin_bottom = 162.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.25
 
 [node name="Button" type="Button" parent="MainMenuContainer/Panel/HBoxContainer/VBoxContainer"]
-margin_top = 164.0
+margin_top = 166.0
 margin_right = 168.0
 margin_bottom = 184.0
 text = "Play"
@@ -302,6 +304,7 @@ margin_bottom = 299.0
 text = "Sample Text"
 align = 1
 valign = 1
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }

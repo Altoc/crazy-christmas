@@ -1,0 +1,882 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://scripts/Level.gd" type="Script" id=1]
+[ext_resource path="res://scenes/obstacles/ObstacleRamp.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Button.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/models/ModelPineTree.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/obstacles/ObstacleWall.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/CutsceneTrigger.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/Wall.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/TeleportOut.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/Floor.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/models/ModelCabin.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/obstacles/TrapPit.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/models/ModelCampFire.tscn" type="PackedScene" id=12]
+
+[node name="Level06" type="Spatial"]
+script = ExtResource( 1 )
+myLevel = 0
+
+[node name="Floor" parent="." instance=ExtResource( 9 )]
+
+[node name="Buttons" type="Spatial" parent="."]
+
+[node name="Button" parent="Buttons" instance=ExtResource( 3 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 32.1635, 6, -38.2631 )
+signalChannel = 0
+actionIdx = 2
+
+[node name="Walls" type="Spatial" parent="."]
+
+[node name="Wall" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -32.3605, 22, 28.0328 )
+
+[node name="Wall16" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -27.4616, 22, 30.8612 )
+
+[node name="Wall17" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -26.4263, 22, 34.7249 )
+
+[node name="Wall18" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -30.29, 22, 35.7601 )
+
+[node name="Wall19" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -34.1537, 22, 36.7954 )
+
+[node name="Wall4" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -38.2948, 22, 21.3406 )
+
+[node name="Wall5" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -30.5674, 22, 19.2701 )
+
+[node name="Wall6" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -24.3582, 18, 13.4652 )
+
+[node name="Wall8" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -23.3229, 18, 17.3289 )
+
+[node name="Wall9" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -22.2877, 18, 21.1926 )
+
+[node name="Wall10" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -21.2524, 18, 25.0563 )
+
+[node name="Wall11" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -17.3887, 18, 24.021 )
+
+[node name="Wall12" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -13.525, 18, 22.9858 )
+
+[node name="Wall20" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -9.86933, 14, 9.58293 )
+
+[node name="Wall22" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -10.9046, 14, 5.71923 )
+
+[node name="Wall23" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -11.9399, 14, 1.85553 )
+
+[node name="Wall24" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -12.9752, 14, -2.00818 )
+
+[node name="Wall25" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -9.11146, 14, -3.04346 )
+
+[node name="Wall26" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -4.21248, 14, -0.215027 )
+
+[node name="Wall27" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -7.0409, 14, 4.68395 )
+
+[node name="Wall28" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -2.14192, 14, 7.51238 )
+
+[node name="Wall29" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -1.10665, 14, 11.3761 )
+
+[node name="Wall30" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 15.0967, 6, -13.1535 )
+
+[node name="Wall32" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 14.0615, 6, -17.0172 )
+
+[node name="Wall43" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 13.0262, 6, -20.8809 )
+
+[node name="Wall44" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 11.9909, 6, -24.7446 )
+
+[node name="Wall45" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 16.8899, 6, -21.9162 )
+
+[node name="Wall46" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 21.7889, 6, -19.0877 )
+
+[node name="Wall47" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 20.7536, 6, -22.9514 )
+
+[node name="Wall48" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 22.8242, 6, -15.224 )
+
+[node name="Wall49" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 23.8594, 6, -11.3603 )
+
+[node name="Wall31" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 16.132, 6, -9.28978 )
+
+[node name="Wall21" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -8.83405, 14, 13.4466 )
+
+[node name="Wall13" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -19.4592, 18, 16.2936 )
+
+[node name="Wall14" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -21.5298, 18, 8.56624 )
+
+[node name="Wall15" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -17.6661, 18, 7.53096 )
+
+[node name="Wall7" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -25.3935, 18, 9.60152 )
+
+[node name="Wall33" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 0.478452, 10, -9.75417 )
+
+[node name="Wall34" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 1.51373, 10, -5.89046 )
+
+[node name="Wall35" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 2.549, 10, -2.02676 )
+
+[node name="Wall36" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 3.58428, 10, 1.83694 )
+
+[node name="Wall37" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 7.44798, 10, 0.801668 )
+
+[node name="Wall38" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 11.3117, 10, -0.23361 )
+
+[node name="Wall39" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 5.37743, 10, -6.92574 )
+
+[node name="Wall40" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 3.30688, 10, -14.6531 )
+
+[node name="Wall41" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 7.17058, 10, -15.6884 )
+
+[node name="Wall42" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -0.556824, 10, -13.6179 )
+
+[node name="Wall50" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 24.9616, 2, -32.3612 )
+
+[node name="Wall51" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 25.9968, 2, -28.4975 )
+
+[node name="Wall52" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 27.0321, 2, -24.6338 )
+
+[node name="Wall53" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 28.0674, 2, -20.7701 )
+
+[node name="Wall54" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 31.9311, 2, -21.8053 )
+
+[node name="Wall55" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 35.7948, 2, -22.8406 )
+
+[node name="Wall60" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 39.6693, 2, -23.872 )
+
+[node name="Wall61" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 43.4985, 2, -24.9078 )
+
+[node name="Wall56" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 29.8605, 2, -29.5327 )
+
+[node name="Wall57" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 27.79, 2, -37.2602 )
+
+[node name="Wall58" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 31.6537, 2, -38.2954 )
+
+[node name="Wall59" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 23.9263, 2, -36.2249 )
+
+[node name="Wall2" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -37.2595, 22, 25.2043 )
+
+[node name="Wall3" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -34.4311, 22, 20.3053 )
+
+[node name="Obstacles" type="Spatial" parent="."]
+
+[node name="ObstacleWall" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 6.1353, 12, -19.5521 )
+signalChannel = 0
+
+[node name="ObstacleWall2" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 2.2716, 12, -18.5168 )
+signalChannel = 0
+
+[node name="ObstacleWall3" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -1.5921, 12, -17.4816 )
+signalChannel = 0
+
+[node name="ObstacleWall4" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 4.34215, 12, -10.7894 )
+signalChannel = 0
+
+[node name="ObstacleWall5" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 8.20586, 12, -11.8247 )
+signalChannel = 0
+
+[node name="ObstacleWall6" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 9.24113, 12, -7.96101 )
+signalChannel = 0
+
+[node name="ObstacleWall7" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 10.2764, 12, -4.09731 )
+signalChannel = 0
+
+[node name="ObstacleWall8" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 6.4127, 12, -3.06203 )
+signalChannel = 0
+
+[node name="ObstacleWall9" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 18.9605, 8, -14.1888 )
+signalChannel = 0
+
+[node name="ObstacleWall10" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 19.9957, 8, -10.3251 )
+signalChannel = 0
+
+[node name="ObstacleWall11" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 17.9252, 8, -18.0525 )
+signalChannel = 0
+
+[node name="ObstacleWall12" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 15.8546, 8, -25.7799 )
+signalChannel = 0
+
+[node name="ObstacleWall13" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 10.9556, 8, -28.6083 )
+signalChannel = 0
+
+[node name="ObstacleWall14" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 14.8193, 8, -29.6436 )
+signalChannel = 0
+
+[node name="ObstacleWall15" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 18.683, 8, -30.6789 )
+signalChannel = 0
+
+[node name="ObstacleWall25" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -14.0104, 16, -5.87188 )
+signalChannel = 0
+
+[node name="ObstacleWall26" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -10.1467, 16, -6.90716 )
+signalChannel = 0
+
+[node name="ObstacleWall27" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -6.28303, 16, -7.94243 )
+signalChannel = 0
+
+[node name="ObstacleWall28" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -26.4288, 20, 5.73781 )
+signalChannel = 0
+
+[node name="ObstacleWall29" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -22.5651, 20, 4.70254 )
+signalChannel = 0
+
+[node name="ObstacleWall30" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -18.7014, 20, 3.66726 )
+signalChannel = 0
+
+[node name="ObstacleWall31" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -39.3301, 24, 17.4769 )
+signalChannel = 0
+
+[node name="ObstacleWall50" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -43.1938, 24, 18.5122 )
+signalChannel = 0
+
+[node name="ObstacleWall51" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -42.1585, 24, 22.3759 )
+signalChannel = 0
+
+[node name="ObstacleWall52" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -41.1232, 24, 26.2396 )
+signalChannel = 0
+
+[node name="ObstacleWall53" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -40.0879, 24, 30.1033 )
+signalChannel = 0
+
+[node name="ObstacleWall54" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -39.0527, 24, 33.967 )
+signalChannel = 0
+
+[node name="ObstacleWall55" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -38.0174, 24, 37.8307 )
+signalChannel = 0
+
+[node name="ObstacleWall56" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -36.9821, 24, 41.6944 )
+signalChannel = 0
+
+[node name="ObstacleWall57" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -33.1184, 24, 40.6591 )
+signalChannel = 0
+
+[node name="ObstacleWall58" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -29.2547, 24, 39.6239 )
+signalChannel = 0
+
+[node name="ObstacleWall59" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -25.391, 24, 38.5886 )
+signalChannel = 0
+
+[node name="ObstacleWall60" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -20.2171, 20, 28.92 )
+signalChannel = 0
+
+[node name="ObstacleWall61" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -16.3534, 20, 27.8848 )
+signalChannel = 0
+
+[node name="ObstacleWall62" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -12.4897, 20, 26.8495 )
+signalChannel = 0
+
+[node name="ObstacleWall63" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -7.79878, 16, 17.3103 )
+signalChannel = 0
+
+[node name="ObstacleWall64" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -3.93508, 16, 16.2751 )
+signalChannel = 0
+
+[node name="ObstacleWall65" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -0.0713732, 16, 15.2398 )
+signalChannel = 0
+
+[node name="ObstacleWall66" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 4.61956, 12, 5.70065 )
+signalChannel = 0
+
+[node name="ObstacleWall67" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 8.48326, 12, 4.66537 )
+signalChannel = 0
+
+[node name="ObstacleWall68" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 12.347, 12, 3.63009 )
+signalChannel = 0
+
+[node name="ObstacleWall69" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 17.1673, 8, -5.42608 )
+signalChannel = 0
+
+[node name="ObstacleWall70" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 21.031, 8, -6.46136 )
+signalChannel = 0
+
+[node name="ObstacleWall71" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 24.8947, 8, -7.49664 )
+signalChannel = 0
+
+[node name="ObstacleWall72" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 29.1027, 4, -16.9064 )
+signalChannel = 0
+
+[node name="ObstacleWall73" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 32.9664, 4, -17.9416 )
+signalChannel = 0
+
+[node name="ObstacleWall74" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 36.8301, 4, -18.9769 )
+signalChannel = 0
+
+[node name="ObstacleWall76" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 39.5801, 8, -23.9769 )
+signalChannel = 0
+
+[node name="ObstacleWall75" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 40.6938, 4, -20.0122 )
+signalChannel = 0
+
+[node name="ObstacleWall77" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 38.6232, 4, -27.7396 )
+signalChannel = 0
+
+[node name="ObstacleWall78" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 37.588, 4, -31.6033 )
+signalChannel = 0
+
+[node name="ObstacleWall79" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 36.5527, 4, -35.467 )
+signalChannel = 0
+
+[node name="ObstacleWall80" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 35.5174, 4, -39.3307 )
+signalChannel = 0
+
+[node name="ObstacleWall81" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 34.4821, 4, -43.1944 )
+signalChannel = 0
+
+[node name="ObstacleWall34" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -36.2242, 24, 29.068 )
+signalChannel = 0
+
+[node name="ObstacleWall35" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -35.189, 24, 32.9317 )
+signalChannel = 0
+
+[node name="ObstacleWall36" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -31.3253, 24, 31.8964 )
+signalChannel = 0
+
+[node name="ObstacleWall37" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -33.3958, 24, 24.169 )
+signalChannel = 0
+
+[node name="ObstacleWall38" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -29.5321, 24, 23.1338 )
+signalChannel = 0
+
+[node name="ObstacleWall39" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -28.4968, 24, 26.9975 )
+signalChannel = 0
+
+[node name="ObstacleWall40" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -15.5955, 20, 15.2584 )
+signalChannel = 0
+
+[node name="ObstacleWall41" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -16.6308, 20, 11.3947 )
+signalChannel = 0
+
+[node name="ObstacleWall42" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -20.4945, 20, 12.4299 )
+signalChannel = 0
+
+[node name="ObstacleWall43" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -18.424, 20, 20.1573 )
+signalChannel = 0
+
+[node name="ObstacleWall44" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -14.5603, 20, 19.1221 )
+signalChannel = 0
+
+[node name="ObstacleWall45" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -6.00563, 16, 8.54766 )
+signalChannel = 0
+
+[node name="ObstacleWall46" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -4.97035, 16, 12.4114 )
+signalChannel = 0
+
+[node name="ObstacleWall47" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -8.07618, 16, 0.820252 )
+signalChannel = 0
+
+[node name="ObstacleWall48" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -5.24775, 16, -4.07873 )
+signalChannel = 0
+
+[node name="ObstacleWall49" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -3.1772, 16, 3.64868 )
+signalChannel = 0
+
+[node name="ObstacleWall32" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -35.4664, 24, 16.4416 )
+signalChannel = 0
+
+[node name="ObstacleWall33" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -31.6027, 24, 15.4064 )
+signalChannel = 0
+
+[node name="ObstacleWall16" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 19.7183, 8, -26.8151 )
+signalChannel = 0
+
+[node name="ObstacleWall17" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 22.891, 4, -40.0886 )
+signalChannel = 0
+
+[node name="ObstacleWall18" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 26.7547, 4, -41.1239 )
+signalChannel = 0
+
+[node name="ObstacleWall19" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 30.6184, 4, -42.1591 )
+signalChannel = 0
+
+[node name="ObstacleWall20" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 32.689, 4, -34.4317 )
+signalChannel = 0
+
+[node name="ObstacleWall21" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 33.7242, 4, -30.568 )
+signalChannel = 0
+
+[node name="ObstacleWall22" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 34.7595, 4, -26.7043 )
+signalChannel = 0
+
+[node name="ObstacleWall23" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 30.8958, 4, -25.669 )
+signalChannel = 0
+
+[node name="ObstacleWall24" parent="Obstacles" instance=ExtResource( 5 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 28.8253, 4, -33.3965 )
+signalChannel = 0
+
+[node name="TrapPit" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -31.6027, 21.5, 15.4064 )
+
+[node name="TrapPit2" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -35.4664, 21.5, 16.4416 )
+
+[node name="TrapPit3" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -39.3301, 21.5, 17.4769 )
+
+[node name="TrapPit4" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -18.7014, 17.5, 3.66726 )
+
+[node name="TrapPit5" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -22.5651, 17.5, 4.70254 )
+
+[node name="TrapPit6" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -26.4288, 17.5, 5.73781 )
+
+[node name="TrapPit31" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -33.3958, 21.5, 24.169 )
+
+[node name="TrapPit32" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -29.5321, 21.5, 23.1338 )
+
+[node name="TrapPit33" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -31.3253, 21.5, 31.8964 )
+
+[node name="TrapPit34" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -35.189, 21.5, 32.9317 )
+
+[node name="TrapPit35" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -36.2242, 21.5, 29.068 )
+
+[node name="TrapPit36" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -28.4968, 21.5, 26.9975 )
+
+[node name="TrapPit37" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -8.07618, 13.5, 0.820252 )
+
+[node name="TrapPit38" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -6.00563, 13.5, 8.54766 )
+
+[node name="TrapPit39" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -4.97035, 13.5, 12.4114 )
+
+[node name="TrapPit50" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -3.93508, 13.5, 16.2751 )
+
+[node name="TrapPit51" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -0.0713713, 13.5, 15.2398 )
+
+[node name="TrapPit52" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -7.79878, 13.5, 17.3103 )
+
+[node name="TrapPit59" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 8.48326, 9.5, 4.66537 )
+
+[node name="TrapPit60" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 12.347, 9.5, 3.63009 )
+
+[node name="TrapPit61" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 4.61956, 9.5, 5.70064 )
+
+[node name="TrapPit62" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 21.031, 5.5, -6.46136 )
+
+[node name="TrapPit63" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 24.8947, 5.5, -7.49664 )
+
+[node name="TrapPit64" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 17.1673, 5.5, -5.42609 )
+
+[node name="TrapPit65" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 32.9664, 1.5, -17.9416 )
+
+[node name="TrapPit66" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 36.8301, 1.5, -18.9769 )
+
+[node name="TrapPit67" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 29.1027, 1.5, -16.9064 )
+
+[node name="TrapPit68" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 39.6585, 1.5, -23.8759 )
+
+[node name="TrapPit69" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 40.6938, 1.5, -20.0122 )
+
+[node name="TrapPit70" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 38.6232, 1.5, -27.7396 )
+
+[node name="TrapPit71" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 36.5527, 1.5, -35.467 )
+
+[node name="TrapPit72" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 37.588, 1.5, -31.6033 )
+
+[node name="TrapPit73" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 35.5174, 1.5, -39.3307 )
+
+[node name="TrapPit74" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 34.4821, 1.5, -43.1944 )
+
+[node name="TrapPit75" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -38.0174, 21.5, 37.8307 )
+
+[node name="TrapPit76" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -39.0527, 21.5, 33.967 )
+
+[node name="TrapPit77" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -41.1232, 21.5, 26.2396 )
+
+[node name="TrapPit78" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -40.0879, 21.5, 30.1033 )
+
+[node name="TrapPit79" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -42.1585, 21.5, 22.3759 )
+
+[node name="TrapPit80" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -43.1938, 21.5, 18.5122 )
+
+[node name="TrapPit53" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -16.3534, 17.5, 27.8848 )
+
+[node name="TrapPit54" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -12.4897, 17.5, 26.8495 )
+
+[node name="TrapPit55" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -20.2171, 17.5, 28.92 )
+
+[node name="TrapPit56" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -29.2547, 21.5, 39.6239 )
+
+[node name="TrapPit57" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -25.391, 21.5, 38.5886 )
+
+[node name="TrapPit58" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -33.1184, 21.5, 40.6591 )
+
+[node name="TrapPit81" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -36.9821, 21.5, 41.6944 )
+
+[node name="TrapPit48" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -3.1772, 13.5, 3.64868 )
+
+[node name="TrapPit49" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 8.20586, 9.5, -11.8247 )
+
+[node name="TrapPit40" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -5.24775, 13.5, -4.07873 )
+
+[node name="TrapPit41" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 16.8899, 5.5, -21.9162 )
+
+[node name="TrapPit42" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 17.9252, 5.5, -18.0525 )
+
+[node name="TrapPit43" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 18.9605, 5.5, -14.1888 )
+
+[node name="TrapPit44" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 19.9957, 5.5, -10.3251 )
+
+[node name="TrapPit45" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 19.7183, 5.5, -26.8151 )
+
+[node name="TrapPit7" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -6.28303, 13.5, -7.94243 )
+
+[node name="TrapPit8" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -10.1467, 13.5, -6.90716 )
+
+[node name="TrapPit9" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -14.0104, 13.5, -5.87188 )
+
+[node name="TrapPit10" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 6.1353, 9.5, -19.5521 )
+
+[node name="TrapPit11" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 2.2716, 9.5, -18.5168 )
+
+[node name="TrapPit12" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -1.5921, 9.5, -17.4816 )
+
+[node name="TrapPit13" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 18.683, 5.5, -30.6789 )
+
+[node name="TrapPit14" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 14.8193, 5.5, -29.6436 )
+
+[node name="TrapPit15" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 10.9556, 5.5, -28.6083 )
+
+[node name="TrapPit16" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 30.6184, 1.5, -42.1591 )
+
+[node name="TrapPit19" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 32.689, 1.5, -34.4317 )
+
+[node name="TrapPit46" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 33.7242, 1.5, -30.568 )
+
+[node name="TrapPit47" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 15.8546, 5.5, -25.7799 )
+
+[node name="TrapPit20" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 28.8253, 1.5, -33.3965 )
+
+[node name="TrapPit21" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 30.8958, 1.5, -25.669 )
+
+[node name="TrapPit22" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 34.7595, 1.5, -26.7043 )
+
+[node name="TrapPit23" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 8.20586, 9.5, -11.8247 )
+
+[node name="TrapPit24" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 4.34215, 9.5, -10.7894 )
+
+[node name="TrapPit25" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 6.4127, 9.5, -3.06203 )
+
+[node name="TrapPit26" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 10.2764, 9.5, -4.09731 )
+
+[node name="TrapPit27" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -16.6308, 17.5, 11.3947 )
+
+[node name="TrapPit28" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -20.4945, 17.5, 12.4299 )
+
+[node name="TrapPit29" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -18.424, 17.5, 20.1573 )
+
+[node name="TrapPit30" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -14.5603, 17.5, 19.1221 )
+
+[node name="TrapPit82" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -15.5955, 17.5, 15.2584 )
+
+[node name="TrapPit83" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 9.24113, 9.5, -7.96102 )
+
+[node name="TrapPit17" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 26.7547, 1.5, -41.1239 )
+
+[node name="TrapPit18" parent="Obstacles" instance=ExtResource( 11 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 22.891, 1.5, -40.0886 )
+
+[node name="ObstacleRamp" parent="Obstacles" instance=ExtResource( 2 )]
+transform = Transform( 0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 24.25, 4, -19.75 )
+
+[node name="ObstacleRamp2" parent="Obstacles" instance=ExtResource( 2 )]
+transform = Transform( -0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, 24.5, 8, -24.25 )
+signalChannel = 0
+
+[node name="ObstacleRamp3" parent="Obstacles" instance=ExtResource( 2 )]
+transform = Transform( -0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, 12, 12, -12.75 )
+signalChannel = 0
+
+[node name="ObstacleRamp4" parent="Obstacles" instance=ExtResource( 2 )]
+transform = Transform( -0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, -0.499998, 15.75, -1.25 )
+signalChannel = 0
+
+[node name="ObstacleRamp5" parent="Obstacles" instance=ExtResource( 2 )]
+transform = Transform( -0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, -12.75, 19.75, 10.5 )
+signalChannel = 0
+
+[node name="Decor" type="Spatial" parent="."]
+
+[node name="ModelPineTree8" parent="Decor" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.25, 6, -38.75 )
+
+[node name="ModelPineTree9" parent="Decor" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 6, -38.75 )
+
+[node name="ModelPineTree10" parent="Decor" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.75, 6, -30.5 )
+
+[node name="ModelPineTree11" parent="Decor" instance=ExtResource( 4 )]
+transform = Transform( -0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 40.0622, 6, 13.0214 )
+
+[node name="ModelPineTree12" parent="Decor" instance=ExtResource( 4 )]
+transform = Transform( -0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 33.5215, 6, 19.5622 )
+
+[node name="ModelPineTree13" parent="Decor" instance=ExtResource( 4 )]
+transform = Transform( -0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 33.875, 6, 7.54137 )
+
+[node name="ModelPineTree14" parent="Decor" instance=ExtResource( 4 )]
+transform = Transform( -0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 38.1505, 6, 41.8235 )
+
+[node name="ModelPineTree15" parent="Decor" instance=ExtResource( 4 )]
+transform = Transform( -0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 30.1398, 6, 37.1985 )
+
+[node name="ModelPineTree16" parent="Decor" instance=ExtResource( 4 )]
+transform = Transform( -0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 41.8425, 6, 34.4287 )
+
+[node name="ModelPineTree17" parent="Decor" instance=ExtResource( 4 )]
+transform = Transform( 0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, 2.97866, 6, 41.1688 )
+
+[node name="ModelPineTree18" parent="Decor" instance=ExtResource( 4 )]
+transform = Transform( 0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, 5.37273, 6, 32.234 )
+
+[node name="ModelPineTree19" parent="Decor" instance=ExtResource( 4 )]
+transform = Transform( 0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, 11.077, 6, 42.8211 )
+
+[node name="ModelPineTree20" parent="Decor" instance=ExtResource( 4 )]
+transform = Transform( 0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 14.8399, 6, 20.9892 )
+
+[node name="ModelPineTree21" parent="Decor" instance=ExtResource( 4 )]
+transform = Transform( 0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 22.8506, 6, 16.3642 )
+
+[node name="ModelPineTree22" parent="Decor" instance=ExtResource( 4 )]
+transform = Transform( 0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 19.3979, 6, 27.8839 )
+
+[node name="ModelPineTree23" parent="Decor" instance=ExtResource( 4 )]
+transform = Transform( 0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -43.1601, 6, 1.48916 )
+
+[node name="ModelPineTree24" parent="Decor" instance=ExtResource( 4 )]
+transform = Transform( 0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -35.1494, 6, -3.13584 )
+
+[node name="ModelPineTree25" parent="Decor" instance=ExtResource( 4 )]
+transform = Transform( 0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -38.6021, 6, 8.38387 )
+
+[node name="ModelCabin" parent="Decor" instance=ExtResource( 10 )]
+transform = Transform( -0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, -31, 1.75, -38.75 )
+
+[node name="ModelCampFire" parent="Decor" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -34.75, 2.25, -30.25 )
+
+[node name="TeleportOut" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 43.75, 6, -25.25 )
+
+[node name="PlayerSpawn" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.25, 23.75, 25 )
+
+[node name="CutsceneTrigger" parent="." instance=ExtResource( 6 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 39.8975, 6.75, -23.9731 )
+targetObj = NodePath("../CutsceneFocus")
+time = 4
+
+[node name="CutsceneFocus" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 49, 32 )
